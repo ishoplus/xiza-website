@@ -184,6 +184,7 @@ nav {
 /* 導航列下拉選單樣式 */
 .nav-links .dropdown {
     position: relative;
+    padding-bottom: 15px; /* 增加底部內邊距，讓下拉選單有重疊空間 */
     /* 為下拉箭頭留出空間 */
 }
 
@@ -206,17 +207,18 @@ nav {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 180px; /* 稍微增加下拉選單寬度 */
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
-    top: calc(100% + 10px); /* 讓下拉選單在父連結下方且有間距 */
+    /* 關鍵調整：使用 top: 100% 和 padding-top 創造重疊區域 */
+    top: 100%; /* 讓下拉選單緊貼在父元素下方 */
     left: 0;
-    padding: 10px 0;
+    padding: 15px 0 10px 0; /* 增加頂部內邊距，創造隱形的觸發區域 */
     opacity: 0;
-    transform: translateY(-10px); /* 初始位置略高 */
+    transform: translateY(0); /* 移除初始的 translateY，讓它從頂部直接出現 */
     transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none; /* 預設不響應事件 */
+    pointer-events: none;
 }
 
 .nav-links .dropdown:hover .dropdown-content {
