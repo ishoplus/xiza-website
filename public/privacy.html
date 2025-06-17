@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隱私權政策 | Xiza AI Agent</title>
+    <meta name="description" content="Xiza AI Agent 網站的隱私權政策，說明我們如何收集、使用和保護您的個人資料。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="gstatic" crossorigin href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Xiza</a> </div>
+        <ul class="nav-links">
+            <li><a href="index.html#about">關於我們</a></li>
+            <li><a href="index.html#services">核心服務</a></li>
+            <li><a href="index.html#methodology">合作流程</a></li>
+            <li><a href="index.html#tech-advantage">技術實力</a></li>
+            <li><a href="index.html#faq">常見問題</a></li>
+            <li><a href="index.html#contact">立即諮詢</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main class="policy-page-content">
+    <div class="container">
+        <h1>隱私權政策</h1>
+        <p class="last-updated">最後更新日期：2025年6月17日</p>
+
+        <h2>1. 資料收集</h2>
+        <p>Xiza AI Agent Services (以下簡稱「本公司」) 在您使用本網站服務時，可能會收集您的某些個人資料，例如您的姓名、電子郵件地址、電話號碼及公司名稱等。這些資料主要用於提供服務、回應您的查詢或進行業務溝通。</p>
+
+        <h2>2. 資料使用</h2>
+        <p>我們收集的資料僅用於以下目的：</p>
+        <ul>
+            <li>提供及改善我們的服務。</li>
+            <li>回應您的諮詢與要求。</li>
+            <li>發送相關業務通訊（在您同意的情況下）。</li>
+            <li>遵守法律義務。</li>
+        </ul>
+
+        <h2>3. 資料保護</h2>
+        <p>本公司承諾保護您的個人資料安全，採取適當的技術與組織措施，防止未經授權的存取、披露、更改或銷毀您的資料。</p>
+
+        <h2>4. Cookie 及追蹤技術</h2>
+        <p>本網站可能使用 Cookie 和類似的追蹤技術，以提升您的瀏覽體驗、分析網站流量和優化廣告投放。您可以透過瀏覽器設定管理 Cookie。</p>
+
+        <h2>5. 第三方連結</h2>
+        <p>本網站可能包含連結至第三方網站。請注意，我們對這些網站的隱私慣例不負責任，建議您閱讀其隱私政策。</p>
+
+        <h2>6. 您的權利</h2>
+        <p>您有權隨時要求存取、更正、刪除您的個人資料，或限制我們對您資料的處理。請透過本網站提供的聯絡方式與我們聯繫。</p>
+
+        <h2>7. 政策變更</h2>
+        <p>本公司可能會不時更新本隱私權政策，任何變更將在本頁面發布。建議您定期檢閱本頁面以了解最新資訊。</p>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Xiza AI Agent Services. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="privacy.html">隱私權政策</a></li>
+            <li><a href="terms.html">服務條款</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    // 為了確保這些政策頁面也具有漢堡選單的響應式功能，您可以將首頁的 JavaScript 複製過來。
+    // 如果您希望這些頁面沒有漢堡選單，則可以省略以下 JS 程式碼。
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    if (burger) { // 檢查 burger 元素是否存在，因為這個 JS 是從首頁複製過來的
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-active')) {
+                    nav.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                    navLinks.forEach(item => item.style.animation = '');
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>

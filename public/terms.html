@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務條款 | Xiza AI Agent</title>
+    <meta name="description" content="Xiza AI Agent 網站的服務條款，規範您使用本公司服務的權利與義務。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="gstatic" crossorigin href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">Xiza</a> </div>
+        <ul class="nav-links">
+            <li><a href="index.html#about">關於我們</a></li>
+            <li><a href="index.html#services">核心服務</a></li>
+            <li><a href="index.html#methodology">合作流程</a></li>
+            <li><a href="index.html#tech-advantage">技術實力</a></li>
+            <li><a href="index.html#faq">常見問題</a></li>
+            <li><a href="index.html#contact">立即諮詢</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main class="policy-page-content">
+    <div class="container">
+        <h1>服務條款</h1>
+        <p class="last-updated">最後更新日期：2025年6月17日</p>
+
+        <h2>1. 接受條款</h2>
+        <p>歡迎使用 Xiza AI Agent Services (以下簡稱「本公司」) 提供的服務。當您存取或使用本公司的網站和服務時，即表示您已閱讀、理解並同意受本服務條款（以下簡稱「本條款」）的約束。</p>
+
+        <h2>2. 服務內容</h2>
+        <p>本公司主要提供客製化 AI Agent 開發及相關智能解決方案。具體服務內容將依據雙方簽訂的合約而定。</p>
+
+        <h2>3. 用戶義務</h2>
+        <p>您同意在使用本服務時，遵守所有適用的法律法規，不進行任何非法或侵犯他人權益的行為。</p>
+
+        <h2>4. 智慧財產權</h2>
+        <p>本網站及服務中的所有內容，包括但不限於文字、圖片、軟體、程式碼等，均受著作權、商標權及其他智慧財產權法律的保護，並為本公司或其授權人所有。</p>
+
+        <h2>5. 免責聲明</h2>
+        <p>本公司將盡力確保服務的準確性和可用性，但不對任何因服務使用或無法使用所造成的直接或間接損害承擔責任。</p>
+
+        <h2>6. 條款修訂</h2>
+        <p>本公司保留隨時修訂本服務條款的權利。修訂後的條款將在本網站上公布，並自公布之日起生效。建議您定期查閱本條款的最新版本。</p>
+
+        <h2>7. 準據法與管轄法院</h2>
+        <p>本條款的解釋與適用，以及與本條款有關的一切爭議，均應依中華民國法律解釋之，並以台灣台北地方法院為第一審管轄法院。</p>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Xiza AI Agent Services. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="privacy.html">隱私權政策</a></li>
+            <li><a href="terms.html">服務條款</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    // 為了確保這些政策頁面也具有漢堡選單的響應式功能，您可以將首頁的 JavaScript 複製過來。
+    // 如果您希望這些頁面沒有漢堡選單，則可以省略以下 JS 程式碼。
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    if (burger) { // 檢查 burger 元素是否存在
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-active')) {
+                    nav.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                    navLinks.forEach(item => item.style.animation = '');
+                }
+            });
+        });
+    }
+</script>
+</body>
+</html>
