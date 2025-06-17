@@ -371,7 +371,7 @@ nav {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* 更明顯的陰影 */
     padding: 40px 30px; /* 增加內邊距 */
     text-align: center;
-    width: calc(33.33% - 40px); /* 嘗試三列佈局，減去gap */
+    width: calc(50% - 40px); /* 嘗試三列佈局，減去gap */
     max-width: 400px; /* 限制單張卡片的最大寬度 */
     flex-grow: 0; /* 防止卡片在空間充足時過度拉伸 */
     flex-shrink: 1; /* 允許卡片在空間不足時縮小 */
@@ -970,7 +970,7 @@ footer p {
         gap: 30px; /* 中等螢幕間距略減 */
     }
     .member-card {
-        width: calc(50% - 40px); /* 允許兩列顯示 */
+        width: calc(100% - 40px); /* 允許兩列顯示 */
         max-width: 450px; /* 允許更大的卡片寬度 */
     }
 }
