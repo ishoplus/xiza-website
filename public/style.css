@@ -95,6 +95,22 @@ p {
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
+/* 新增的導航列登入按鈕樣式 */
+.btn-nav-login {
+    background-color: #f0f8ff; /* 淺藍色背景 */
+    color: #007bff; /* 藍色文字 */
+    border: 2px solid #007bff;
+    padding: 10px 20px; /* 調整大小以適應導航列 */
+    font-size: 0.95em;
+    margin-left: 20px; /* 與其他導航項的間距 */
+}
+
+.btn-nav-login:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
 /* --- 導航列 (Navigation Bar) --- */
 header {
     background-color: #fff;
@@ -163,6 +179,66 @@ nav {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* 導航列下拉選單樣式 */
+.nav-links .dropdown {
+    position: relative;
+    /* 為下拉箭頭留出空間 */
+}
+
+.nav-links .dropdown > a { /* 針對下拉選單父連結的箭頭 */
+    display: flex;
+    align-items: center;
+}
+
+.nav-links .dropdown > a .fa-caret-down {
+    margin-left: 8px; /* 箭頭與文字間距 */
+    transition: transform 0.3s ease;
+}
+
+.nav-links .dropdown:hover > a .fa-caret-down {
+    transform: rotate(180deg); /* 懸停時箭頭旋轉 */
+}
+
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px; /* 稍微增加下拉選單寬度 */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: calc(100% + 10px); /* 讓下拉選單在父連結下方且有間距 */
+    left: 0;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-10px); /* 初始位置略高 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* 預設不響應事件 */
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all; /* 懸停時響應事件 */
+}
+
+.nav-links .dropdown-content a {
+    color: #555; /* 下拉選單連結文字顏色 */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap; /* 防止文字換行 */
+    font-weight: 500; /* 調整字體粗細 */
+}
+
+.nav-links .dropdown-content a:hover {
+    background-color: #e6f2ff; /* 懸停背景色 */
+    color: #007bff; /* 懸停文字顏色 */
 }
 
 /* 漢堡選單 (RWD用) */
@@ -317,8 +393,6 @@ nav {
     text-align: center; /* 確保姓名置中 */
 }
 
-/* 職位樣式 (針對 h4 後的第一個 p 標籤) */
-/* 這裡不需要特別處理，因為我們只有一個 p 標籤在 h4 下 */
 /* 簡介文字樣式 */
 .member-card p {
     font-size: 1.1em; /* 簡介文字大小 */
@@ -396,6 +470,86 @@ nav {
     color: #666;
     text-align: left; /* 服務說明文字靠左 */
 }
+
+/* SaaS 產品推廣區塊樣式 */
+.our-products-promo {
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #eee; /* Light separator */
+}
+
+.our-products-promo h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.our-products-promo p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-links-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px; /* Adjust width as needed */
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.product-card i {
+    font-size: 3em;
+    color: #007bff; /* Primary color for icons */
+    margin-bottom: 20px;
+}
+
+.product-card h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+.product-card span {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
 
 /* --- 方法論/流程區塊 --- */
 .methodology-section {
@@ -978,6 +1132,30 @@ footer p {
         margin-left: 0;
     }
 
+    /* SaaS 產品推廣區塊的響應式調整 */
+    .nav-links .dropdown-content {
+        position: static; /* 在手機上，下拉選單變為內聯 */
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0 0 0 20px; /* 縮排下拉選單項目 */
+    }
+    .nav-links .dropdown:hover .dropdown-content {
+        display: block; /* 確保它在 hover 時仍顯示 (在支援 hover 的裝置上) */
+    }
+    .nav-links.nav-active .dropdown-content {
+        display: block; /* 漢堡選單展開時顯示下拉內容 */
+    }
+    .nav-links .dropdown a {
+        padding: 10px 0; /* 調整手機導航連結的內邊距 */
+    }
+    .product-links-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-card {
+        width: 90%; /* 調整手機上的卡片寬度 */
+        max-width: 350px;
+    }
 }
 
 @media (max-width: 480px) {

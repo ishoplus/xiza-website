@@ -16,8 +16,7 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="#">Xiza</a>
-        </div>
+            <a href="index.html">Xiza</a> </div>
         <ul class="nav-links">
             <li><a href="#about">關於我們</a></li>
             <li><a href="#services">核心服務</a></li>
@@ -25,6 +24,14 @@
             <li><a href="#tech-advantage">技術實力</a></li>
             <li><a href="#faq">常見問題</a></li>
             <li><a href="#contact">立即諮詢</a></li>
+            <li class="dropdown">
+                <a href="#">我們的產品 <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="https://platform.xiza.com" target="_blank">Xiza Platform</a>
+                    <a href="https://words.xiza.com" target="_blank">Xiza Words</a>
+                </div>
+            </li>
+            <li><a href="https://platform.xiza.com/login" target="_blank" class="btn btn-nav-login">登入</a></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -106,6 +113,25 @@
                 <i class="fas fa-handshake"></i>
                 <h3>強化內部協作</h3>
                 <p>AI Agent 促進跨部門信息流暢與任務協調，提升團隊整體協同效率。</p>
+            </div>
+        </div>
+
+        <div class="our-products-promo">
+            <h3>探索我們的 AI SaaS 產品</h3>
+            <p>Xiza 除了提供高度客製化的 AI Agent 解決方案，也推出了即開即用的 SaaS 服務，幫助您快速提升效率、加速創新。</p>
+            <div class="product-links-grid">
+                <a href="https://platform.xiza.com" target="_blank" class="product-card">
+                    <i class="fas fa-desktop"></i>
+                    <h4>Xiza Platform</h4>
+                    <p>一站式 AI 應用管理平台，簡化您的智能解決方案部署、監控與迭代。</p>
+                    <span>立即體驗 <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://words.xiza.com" target="_blank" class="product-card">
+                    <i class="fas fa-pen-alt"></i>
+                    <h4>Xiza Words</h4>
+                    <p>強大 AI 寫作助手，助您快速生成高質量內容，大幅提升內容創作效率。</p>
+                    <span>立即體驗 <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </div>
@@ -321,6 +347,18 @@
             item.classList.toggle('active'); // Toggles active class on h3 for icon change
         });
     });
+
+    // Optional: JavaScript to handle dropdown click on mobile
+    const dropdown = document.querySelector('.nav-links .dropdown > a');
+    if (dropdown) {
+        dropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) { // Only on mobile
+                e.preventDefault(); // Prevent default link behavior
+                const dropdownContent = dropdown.nextElementSibling;
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    }
 </script>
 </body>
 </html>
