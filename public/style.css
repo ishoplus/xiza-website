@@ -1,0 +1,1044 @@
+/* style.css - Xiza AI Agent 服務公司網頁樣式 - 重新設計版 */
+
+/* --- 基本設定 --- */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.7; /* 略微增加行高以提升閱讀舒適度 */
+    color: #333;
+    background-color: #f8fafd; /* 整體頁面輕微背景色 */
+}
+
+/* 全域容器，限制內容寬度並居中 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px; /* 左右內邊距略增 */
+}
+
+/* 區塊內邊距設定 */
+section {
+    padding: 100px 0; /* 增加區塊上下間距 */
+    overflow: hidden; /* 防止內容溢出 */
+    position: relative; /* 確保內部定位元素不會溢出 */
+}
+
+/* 標題通用樣式 */
+h1, h2, h3, h4 {
+    color: #2c3e50; /* 深灰色標題 */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700; /* 標題加粗 */
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.8em; /* 英雄區大標題 */
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 3.2em; /* 主要區塊標題 */
+    margin-bottom: 60px; /* 增加區塊標題與內容間距 */
+}
+
+h3 {
+    font-size: 2.2em; /* 次級標題 */
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8; /* 增加行高提高可讀性 */
+    text-align: center; /* 預設文字置中 */
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* --- 按鈕樣式 --- */
+.btn {
+    display: inline-block;
+    padding: 18px 35px; /* 增加按鈕大小 */
+    margin: 10px;
+    border-radius: 8px; /* 圓角更大 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 按鈕陰影 */
+}
+
+.btn-primary {
+    background-color: #007bff; /* 主要按鈕顏色 */
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* 懸停時輕微上浮 */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.btn-secondary:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-3px); /* 懸停時輕微上浮 */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* --- 導航列 (Navigation Bar) --- */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* 更柔和的陰影 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px; /* 調整導航列高度和左右內邊距 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 2em; /* Logo 字體大小 */
+    font-weight: 800; /* 更粗的 Logo 字體 */
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #007bff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 40px; /* 增加導航項間距 */
+}
+
+.nav-links a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600; /* 導航文字加粗 */
+    font-size: 1.05em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative; /* 用於下劃線效果 */
+}
+
+.nav-links a:hover {
+    color: #007bff;
+    transform: translateY(-2px); /* 懸停時輕微上浮 */
+}
+
+.nav-links a::after { /* 導航下劃線效果 */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #007bff;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 漢堡選單 (RWD用) */
+.burger {
+    display: none; /* 預設隱藏 */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 28px; /* 漢堡線條寬度 */
+    height: 3px;
+    background-color: #333;
+    margin: 6px; /* 漢堡線條間距 */
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* --- 第一區塊：首頁/英雄區 (Hero Section) --- */
+.hero-section {
+    background: linear-gradient(135deg, #007bff 0%, #6dd5ed 100%); /* 更流暢的漸變 */
+    color: white;
+    padding: 120px 20px; /* 增加上下內邊距 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh; /* 佔據更多視窗高度 */
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    color: white;
+    font-size: 4.8em; /* 再次放大標題 */
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2); /* 文字陰影 */
+    max-width: 900px;
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.6em; /* 放大副標題 */
+    margin-bottom: 50px;
+    max-width: 900px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 按鈕間距 */
+}
+
+/* --- 第二區塊：關於 Xiza (About Xiza) --- */
+.about-section {
+    background-color: #fcfdff; /* 輕微偏藍的背景 */
+    padding-bottom: 50px; /* 調整底部間距，避免與團隊區塊重疊感 */
+}
+
+.about-section .intro-text {
+    font-size: 1.25em;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+    font-weight: 500;
+    color: #444;
+}
+
+.vision-mission {
+    background-color: #eaf6ff; /* 淺藍色背景 */
+    padding: 45px; /* 略增內邊距 */
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.vision-mission h3 {
+    font-size: 2.3em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #007bff; /* 願景使命標題顏色 */
+}
+
+.vision-mission p {
+    font-size: 1.15em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    text-align: center;
+}
+
+.team-intro h3 {
+    font-size: 2.5em; /* 團隊標題 */
+    margin-top: 60px;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+/* --- 核心團隊區塊 CSS 強化 --- */
+
+/* 確保整個區塊的文字顏色統一 */
+.team-intro p {
+    color: #555; /* 統一團隊介紹的文字顏色 */
+    text-align: center; /* 確保段落文字置中 */
+    margin-bottom: 20px;
+}
+
+/* 團隊成員網格佈局 - 使用 Flexbox 確保水平排列和間距 */
+.team-members {
+    display: flex; /* 啟用 Flexbox */
+    justify-content: center; /* 水平居中對齊 Flex 項目 */
+    align-items: flex-start; /* 頂部對齊卡片 (如果高度不同) */
+    flex-wrap: wrap; /* 允許項目換行 */
+    gap: 40px; /* 設置所有方向上的間距，讓卡片間有足夠空間 */
+    margin-top: 50px;
+    margin-bottom: 50px; /* 增加底部間距 */
+    padding: 0; /* 確保沒有額外內邊距 */
+    list-style: none; /* 如果是 ul/li 結構，移除點或數字 */
+}
+
+/* 成員卡片樣式 */
+.member-card {
+    background-color: white;
+    border-radius: 15px; /* 圓角更大 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* 更明顯的陰影 */
+    padding: 40px 30px; /* 增加內邊距 */
+    text-align: center;
+    width: calc(33.33% - 40px); /* 嘗試三列佈局，減去gap */
+    max-width: 400px; /* 限制單張卡片的最大寬度 */
+    flex-grow: 0; /* 防止卡片在空間充足時過度拉伸 */
+    flex-shrink: 1; /* 允許卡片在空間不足時縮小 */
+    box-sizing: border-box; /* 確保 padding 和 border 不會增加總寬度 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加懸停動畫 */
+    border: 1px solid #e0e0e0; /* 輕微邊框 */
+    margin: 0; /* 移除可能的舊邊距 */
+}
+
+.member-card:hover {
+    transform: translateY(-10px); /* 懸停時輕微上浮 */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15); /* 懸停時陰影更深 */
+}
+
+/* 創辦人/技術長 姓名樣式 */
+.member-card h4 {
+    font-size: 1.8em; /* 創辦人姓名更大 */
+    margin-bottom: 8px; /* 與職位間距 */
+    color: #2c3e50;
+    font-weight: 700; /* 更粗的字體 */
+    text-align: center; /* 確保姓名置中 */
+}
+
+/* 職位樣式 (針對 h4 後的第一個 p 標籤) */
+/* 這裡不需要特別處理，因為我們只有一個 p 標籤在 h4 下 */
+/* 簡介文字樣式 */
+.member-card p {
+    font-size: 1.1em; /* 簡介文字大小 */
+    line-height: 1.8; /* 行高增加，提高可讀性 */
+    color: #444; /* 簡介文字顏色 */
+    text-align: justify; /* 左右對齊 */
+    margin-bottom: 0; /* 移除底部預設外邊距 */
+    word-break: break-word; /* 防止長單詞溢出 */
+}
+
+/* 強調文字 (strong) */
+.member-card p strong {
+    color: #007bff; /* 強調關鍵數字或詞語 */
+    font-weight: 700;
+}
+
+/* 斜體文字 (em) - 藍色斜體，並提高特異性確保覆蓋 */
+.member-card p em {
+    color: #007bff !important; /* 強制設定為藍色 */
+    font-style: italic !important; /* 強制設定為斜體 */
+    font-weight: normal !important; /* 強制為正常粗細 */
+}
+/* --- 核心團隊區塊 CSS 強化 結束 --- */
+
+
+/* --- 服務區塊 --- */
+.services-section {
+    background-color: #f8fafd;
+    text-align: center;
+}
+
+.section-description { /* 區塊描述通用樣式 */
+    font-size: 1.2em;
+    max-width: 900px;
+    margin: -40px auto 60px auto; /* 與標題和網格間距 */
+    color: #666;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 最小寬度略增 */
+    gap: 40px; /* 間距加大 */
+    margin-top: 50px;
+}
+
+.service-item {
+    background-color: white; /* 淺藍色背景改為白色 */
+    padding: 35px; /* 增加內邊距 */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07); /* 更明顯陰影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent; /* 預設透明邊框 */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border-color: #007bff; /* 懸停時邊框變藍 */
+}
+
+.service-item i {
+    font-size: 3.5em; /* 圖標更大 */
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+.service-item h3 {
+    font-size: 1.6em; /* 服務標題 */
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.service-item p {
+    font-size: 1.05em;
+    color: #666;
+    text-align: left; /* 服務說明文字靠左 */
+}
+
+/* --- 方法論/流程區塊 --- */
+.methodology-section {
+    background-color: #eaf6ff; /* 淺藍色背景 */
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 調整最小寬度 */
+    gap: 50px; /* 間距更大 */
+    margin-top: 50px;
+    counter-reset: step-counter; /* 重置計數器 */
+}
+
+.step-item {
+    background-color: white;
+    padding: 40px 30px; /* 調整內邊距 */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.step-icon {
+    width: 70px; /* 圖標更大 */
+    height: 70px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em; /* 數字更大 */
+    font-weight: bold;
+    margin: -70px auto 25px auto; /* 讓圖標突出更多 */
+    box-shadow: 0 6px 15px rgba(0,123,255,0.4);
+    border: 3px solid white; /* 白色邊框 */
+}
+
+/* 自動編號不再需要手動內容設定，CSS counter會自動處理 */
+/* .step-item:nth-child(1) .step-icon { content: "1"; } */
+/* ... */
+
+.step-item h3 {
+    font-size: 1.6em; /* 步驟標題 */
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.step-item p {
+    font-size: 1.05em;
+    color: #666;
+    text-align: center;
+}
+
+/* --- 技術優勢區塊 --- */
+.tech-advantage-section {
+    background-color: #f8fafd;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.tech-item {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.tech-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border-color: #007bff;
+}
+
+.tech-item i {
+    font-size: 3.5em;
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+.tech-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.tech-item p {
+    font-size: 1.05em;
+    color: #666;
+    text-align: center;
+}
+
+/* --- 為什麼選擇我們區塊 --- */
+.why-us-section {
+    background-color: #eaf6ff;
+}
+
+.advantage-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.advantage-item {
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.advantage-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border-color: #007bff;
+}
+
+.advantage-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.advantage-item p {
+    font-size: 1.05em;
+    color: #666;
+    text-align: left;
+}
+
+/* --- 常見問題區塊 (FAQ) --- */
+.faq-section {
+    background-color: #f8fafd;
+}
+
+.faq-items {
+    max-width: 900px;
+    margin: 60px auto 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    margin-bottom: 20px; /* 增加FAQ項目間距 */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.faq-item h3 {
+    font-size: 1.4em; /* FAQ問題字體 */
+    padding: 20px 25px; /* 調整內邊距 */
+    margin: 0;
+    cursor: pointer;
+    background-color: #f0f8ff; /* 淺藍背景 */
+    color: #2c3e50;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item h3:hover {
+    background-color: #e6f2ff; /* 懸停效果 */
+}
+
+/* FAQ 開合圖標 */
+.faq-item h3::after {
+    content: '\2b'; /* Plus sign unicode */
+    font-family: 'Font Awesome 5 Free'; /* 確保使用 Font Awesome */
+    font-weight: 900; /* 對應 Font Awesome 的實心圖標 */
+    font-size: 1.2em;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.faq-item h3.active::after {
+    content: '\2212'; /* Minus sign unicode */
+    transform: rotate(0deg); /* 確保-符號不旋轉 */
+}
+
+.faq-item p {
+    padding: 0 25px; /* 調整內邊距 */
+    margin: 0;
+    font-size: 1.05em;
+    color: #555;
+    text-align: left;
+    max-height: 0; /* 預設隱藏 */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; /* 更流暢的動畫 */
+}
+
+.faq-item p.active {
+    max-height: 300px; /* 足夠高的值，使其完全展開 (根據內容調整) */
+    padding-top: 15px; /* 展開後頂部間距 */
+    padding-bottom: 25px; /* 展開後底部間距 */
+}
+
+/* --- 聯絡我們區塊 (Contact Us) --- */
+.contact-section {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%); /* 深藍到淺藍漸變 */
+    color: white;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.contact-section h2, .contact-section p {
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.contact-section .section-description { /* 聯絡區塊的描述 */
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 60px;
+}
+
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px; /* 間距加大 */
+    margin-top: 50px;
+}
+
+.contact-form, .contact-info {
+    background-color: rgba(255,255,255,0.95); /* 更不透明的白色 */
+    padding: 50px; /* 增加內邊距 */
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25); /* 更明顯的陰影 */
+    color: #333;
+    max-width: 550px; /* 略微增加最大寬度 */
+    text-align: left;
+    flex: 1; /* 允許彈性擴展 */
+    min-width: 300px; /* 確保最小寬度 */
+}
+
+.contact-form h3, .contact-info h3 {
+    color: #007bff;
+    margin-bottom: 35px;
+    font-size: 1.8em;
+    text-align: left; /* 內部標題靠左 */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 24px); /* 考慮內邊距 */
+    padding: 15px 12px; /* 增加內邊距 */
+    margin-bottom: 20px; /* 增加間距 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* 允許垂直調整大小 */
+    min-height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 18px; /* 增加按鈕大小 */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+}
+
+.contact-info p {
+    font-size: 1.15em;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i { /* 圖標樣式 */
+    font-size: 1.3em;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start; /* 社群圖標靠左對齊 */
+    gap: 25px; /* 圖標間距 */
+}
+
+.social-links a {
+    font-size: 2.2em; /* 社群圖標更大 */
+    color: #007bff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+    transform: translateY(-5px);
+}
+
+/* --- 頁腳 (Footer) --- */
+footer {
+    background-color: #2c3e50; /* 深灰色 */
+    color: white;
+    padding: 40px 20px; /* 增加頁腳內邊距 */
+    text-align: center;
+    font-size: 0.95em;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 響應式佈局 */
+}
+
+footer p {
+    margin: 0;
+    color: #bbb;
+    text-align: left; /* 左對齊版權 */
+    flex-grow: 1; /* 允許版權資訊擴展 */
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-left: 25px; /* 頁腳連結間距 */
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+
+/* --- RWD 響應式設計 (Media Queries) --- */
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3.2em;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 1.8em;
+    }
+    .nav-links {
+        width: 60%;
+    }
+    .service-grid,
+    .process-steps,
+    .tech-grid,
+    .advantage-list {
+        gap: 30px; /* 中等螢幕間距略減 */
+    }
+    .member-card {
+        width: calc(50% - 40px); /* 允許兩列顯示 */
+        max-width: 450px; /* 允許更大的卡片寬度 */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* 進一步調整基本字體大小 */
+    }
+
+    section {
+        padding: 60px 0; /* 減少區塊內邊距 */
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+        min-height: 70vh;
+    }
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+    .hero-section p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    /* 導航列變為漢堡選單模式 */
+    nav {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: #2c3e50; /* 側邊菜單背景 */
+        flex-direction: column;
+        align-items: center;
+        width: 65%; /* 側邊菜單寬度 */
+        transform: translateX(100%); /* 預設隱藏 */
+        transition: transform 0.5s ease-in-out;
+        z-index: 999;
+        padding-top: 100px; /* 為 Logo 和漢堡圖標留出空間 */
+        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-links li {
+        margin: 25px 0; /* 調整菜單項間距 */
+        opacity: 0; /* 預設隱藏，動畫後出現 */
+    }
+
+    .nav-links a {
+        color: white; /* 菜單文字顏色 */
+        font-size: 1.3em; /* 菜單文字大小 */
+    }
+    .nav-links a:hover {
+        color: #00c6ff; /* 懸停顏色 */
+    }
+
+    .burger {
+        display: block; /* 漢堡圖標顯示 */
+        z-index: 1001; /* 確保漢堡選單在導航之上 */
+    }
+
+    .nav-active {
+        transform: translateX(0%); /* 漢堡選單展開 */
+    }
+
+    /* 漢堡選單動畫 */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* 確保所有 grid 佈局在小螢幕上變為單列 */
+    .service-grid,
+    .process-steps,
+    .tech-grid,
+    .advantage-list,
+    .team-members,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-card, .service-item, .step-item, .tech-item, .advantage-item {
+        max-width: 90%; /* 小螢幕下佔滿寬度 */
+        margin: 0 auto; /* 單列時居中 */
+    }
+
+    .member-card p {
+        text-align: left; /* 簡介文字在小螢幕上靠左對齊 */
+    }
+
+    .process-steps {
+        gap: 30px;
+    }
+    .step-item {
+        padding: 30px 20px;
+    }
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2em;
+        margin: -60px auto 20px auto;
+    }
+
+    .contact-form, .contact-info {
+        padding: 30px;
+        max-width: 90%; /* 小螢幕下佔滿寬度 */
+        margin: 0 auto;
+    }
+    .contact-form h3, .contact-info h3 {
+        font-size: 1.5em;
+    }
+    .contact-info p {
+        font-size: 1em;
+    }
+    .social-links {
+        justify-content: center; /* 社群圖標在小螢幕上居中 */
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer p {
+        text-align: center; /* 版權置中 */
+        margin-bottom: 15px;
+    }
+    .footer-links {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+    .footer-links li {
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 0.95em;
+    }
+
+    .logo a {
+        font-size: 1.5em;
+    }
+    .nav-links {
+        width: 80%; /* 超小螢幕下菜單更寬 */
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .member-card, .service-item, .step-item, .tech-item, .advantage-item {
+        padding: 25px 15px;
+    }
+    .member-card h4 {
+        font-size: 1.4em;
+    }
+    .member-card p { /* 涵蓋所有 p 標籤 */
+        font-size: 0.95em;
+        text-align: left;
+    }
+
+    .faq-item h3 {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+    .faq-item p.active {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+}
+
+
+/* --- 關鍵幀動畫 (Keyframe Animations) --- */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
