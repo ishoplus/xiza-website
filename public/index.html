@@ -24,14 +24,7 @@
             <li><a href="#tech-advantage">技術實力</a></li>
             <li><a href="#faq">常見問題</a></li>
             <li><a href="#contact">立即諮詢</a></li>
-            <li class="dropdown">
-                <a href="#">我們的產品 <i class="fas fa-caret-down"></i></a>
-                <div class="dropdown-content">
-                    <a href="#xitto">Xitto 桌面版</a>
-                    <a href="https://platform.xi-za.com" target="_blank">Xiza Platform</a>
-                    <a href="https://words.xi-za.com" target="_blank">Xiza Words</a>
-                </div>
-            </li>
+            <li><a href="#xitto">Xitto 下載</a></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -116,88 +109,144 @@
             </div>
         </div>
 
-        <div class="our-products-promo">
-            <h3>探索我們的 AI SaaS 產品</h3>
-            <p>Xiza 除了提供高度客製化的 AI Agent 解決方案，也推出了即開即用的 SaaS 服務，幫助您快速提升效率、加速創新。</p>
-            <div class="product-links-grid">
-                <a href="https://platform.xi-za.com" target="_blank" class="product-card">
-                    <i class="fas fa-desktop"></i>
-                    <h4>Xiza Platform</h4>
-                    <p>一站式 AI 應用管理平台，簡化您的智能解決方案部署、監控與迭代。</p>
-                    <span>立即體驗 <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="https://words.xi-za.com" target="_blank" class="product-card">
-                    <i class="fas fa-book-reader"></i>
-                    <h4>Xiza Words</h4>
-                    <p>您的專屬兒童英文閱讀小幫手，透過 AI 互動，讓孩子愛上閱讀，輕鬆提升英文能力。</p>
-                    <span>立即體驗 <i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
     </div>
 </section>
 
 <section id="xitto" class="xitto-section">
+    <div class="xitto-glow" aria-hidden="true"></div>
     <div class="container">
-        <div class="xitto-inner">
-            <div class="xitto-info">
-                <span class="xitto-badge">免費桌面應用</span>
-                <h2 class="xitto-title">Xitto</h2>
-                <p class="xitto-tagline">多 Agent AI 助手，讓智能真正融入您的日常工作流。</p>
-                <p class="xitto-desc">選文改寫、整體文件修改、記憶偏好、工作目錄整合——Xitto 是一款開箱即用的桌面 AI 聊天工具，支援多種 AI 模型，讓您在本機享有完整的智能助理體驗。</p>
 
-                <div class="xitto-features">
-                    <div class="xitto-feature"><i class="fas fa-robot"></i><span>多 Agent 角色切換</span></div>
-                    <div class="xitto-feature"><i class="fas fa-file-alt"></i><span>文件智能編輯與 Diff 對比</span></div>
-                    <div class="xitto-feature"><i class="fas fa-brain"></i><span>個性化記憶系統</span></div>
-                    <div class="xitto-feature"><i class="fas fa-folder-open"></i><span>工作目錄瀏覽與上傳</span></div>
-                    <div class="xitto-feature"><i class="fas fa-eye"></i><span>思考過程可視化</span></div>
-                    <div class="xitto-feature"><i class="fas fa-bolt"></i><span>即時串流回覆</span></div>
-                </div>
+        <!-- 頂部 header：居中 -->
+        <div class="xitto-header">
+            <span class="xitto-badge">免費桌面應用</span>
+            <h2 class="xitto-title">Xitto</h2>
+            <p class="xitto-tagline">多 Agent AI 助手，讓智能真正融入您的日常工作</p>
+            <p class="xitto-desc">選文改寫、整體文件修改、記憶偏好、工作目錄整合<br>開箱即用，免設定，讓 AI 成為你真正的工作夥伴</p>
+        </div>
 
-                <div class="xitto-download-row">
-                    <a id="dlWindows" href="https://github.com/ishoplus/xitto/releases/latest" target="_blank" class="btn-dl btn-dl-win">
-                        <i class="fab fa-windows"></i>
-                        <div class="btn-dl-text">
-                            <span class="btn-dl-main">下載 Windows 版</span>
-                            <span class="btn-dl-sub">.exe · 免安裝，開箱即用</span>
-                        </div>
-                    </a>
-                    <a id="dlMac" href="#" class="btn-dl btn-dl-mac btn-dl-soon" aria-disabled="true">
-                        <i class="fab fa-apple"></i>
-                        <div class="btn-dl-text">
-                            <span class="btn-dl-main">Mac 版</span>
-                            <span class="btn-dl-sub">即將推出</span>
-                        </div>
-                    </a>
-                </div>
-                <p class="xitto-version" id="xittoVersion"></p>
-            </div>
-            <div class="xitto-mockup" aria-hidden="true">
-                <div class="mockup-window">
-                    <div class="mockup-titlebar">
+        <!-- 大 Mockup 視窗 -->
+        <div class="xitto-showcase" aria-hidden="true">
+            <div class="mockup-window">
+                <div class="mockup-titlebar">
+                    <div class="mockup-dots">
                         <span class="mockup-dot red"></span>
                         <span class="mockup-dot yellow"></span>
                         <span class="mockup-dot green"></span>
-                        <span class="mockup-title-text">Xitto</span>
                     </div>
-                    <div class="mockup-body">
-                        <div class="mockup-sidebar">
-                            <div class="mockup-conv active"></div>
-                            <div class="mockup-conv"></div>
-                            <div class="mockup-conv"></div>
-                            <div class="mockup-conv"></div>
+                    <span class="mockup-title-text">Xitto</span>
+                    <div class="mockup-tabs">
+                        <span class="mockup-tab active">回應</span>
+                        <span class="mockup-tab">draft.md</span>
+                    </div>
+                </div>
+                <div class="mockup-body">
+                    <!-- 左側 sidebar -->
+                    <div class="mockup-sidebar">
+                        <div class="mockup-agent-badge">Pi</div>
+                        <div class="mockup-conv-list">
+                            <div class="mockup-conv active"><span class="mockup-conv-dot"></span><span class="mockup-conv-label">文件重構計畫</span></div>
+                            <div class="mockup-conv"><span class="mockup-conv-label">週報草稿</span></div>
+                            <div class="mockup-conv"><span class="mockup-conv-label">競品分析</span></div>
+                            <div class="mockup-conv"><span class="mockup-conv-label">程式除錯</span></div>
                         </div>
-                        <div class="mockup-chat">
-                            <div class="mockup-msg user"></div>
-                            <div class="mockup-msg ai wide"></div>
-                            <div class="mockup-msg user short"></div>
-                            <div class="mockup-msg ai"></div>
+                    </div>
+                    <!-- 主聊天區 -->
+                    <div class="mockup-chat">
+                        <div class="mockup-msg user">
+                            <div class="mockup-bubble user">把第二段改得更簡潔，語氣更正式</div>
+                        </div>
+                        <div class="mockup-msg ai">
+                            <div class="mockup-avatar">✦</div>
+                            <div class="mockup-bubble-wrap">
+                                <div class="mockup-thinking">
+                                    <span class="mockup-think-icon">◎</span> 分析文件結構中…
+                                </div>
+                                <div class="mockup-bubble ai">
+                                    <div class="mockup-diff-banner">
+                                        <span class="diff-count">2 處修改</span>
+                                        <span class="diff-action">套用全部</span>
+                                    </div>
+                                    <div class="mockup-diff-line del">原有冗長的描述性段落，包含不必要的背景說明。</div>
+                                    <div class="mockup-diff-line ins">精簡後的核心論述，直接切入重點。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右側文件面板 -->
+                    <div class="mockup-file-panel">
+                        <div class="mockup-file-header">
+                            <span class="mockup-file-icon">📄</span>
+                            <span class="mockup-file-name">draft.md</span>
+                        </div>
+                        <div class="mockup-file-lines">
+                            <div class="mockup-line normal"></div>
+                            <div class="mockup-line normal short"></div>
+                            <div class="mockup-line diff-del"></div>
+                            <div class="mockup-line diff-ins"></div>
+                            <div class="mockup-line normal"></div>
+                            <div class="mockup-line normal short"></div>
+                            <div class="mockup-line normal wide"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- 下載按鈕 -->
+        <div class="xitto-download-center">
+            <div class="xitto-download-row">
+                <a id="dlWindows" href="https://github.com/ishoplus/xitto/releases/latest" target="_blank" class="btn-dl btn-dl-win">
+                    <i class="fab fa-windows"></i>
+                    <div class="btn-dl-text">
+                        <span class="btn-dl-main">下載 Windows 版</span>
+                        <span class="btn-dl-sub">.exe · 免安裝，開箱即用</span>
+                    </div>
+                </a>
+                <a id="dlMac" href="#" class="btn-dl btn-dl-mac btn-dl-soon" aria-disabled="true">
+                    <i class="fab fa-apple"></i>
+                    <div class="btn-dl-text">
+                        <span class="btn-dl-main">Mac 版</span>
+                        <span class="btn-dl-sub">即將推出</span>
+                    </div>
+                </a>
+            </div>
+            <p class="xitto-version" id="xittoVersion"></p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="xitto-cards">
+            <div class="xitto-card">
+                <div class="xcard-icon" style="--c:#58a9ff"><i class="fas fa-robot"></i></div>
+                <h4>多 Agent 角色</h4>
+                <p>每個 Agent 有獨特的專長與個性，從創意寫作到程式除錯，選對夥伴事半功倍。</p>
+            </div>
+            <div class="xitto-card">
+                <div class="xcard-icon" style="--c:#7ee787"><i class="fas fa-code-branch"></i></div>
+                <h4>文件 Diff 編輯</h4>
+                <p>自然語言描述修改需求，AI 自動定位段落並展示 inline 字元級差異對比，確認後一鍵套用。</p>
+            </div>
+            <div class="xitto-card">
+                <div class="xcard-icon" style="--c:#d2a8ff"><i class="fas fa-highlighter"></i></div>
+                <h4>選文改寫</h4>
+                <p>選取任意段落，點擊 chip 或自訂描述，AI 改寫後顯示前後對比，支援逐一審閱。</p>
+            </div>
+            <div class="xitto-card">
+                <div class="xcard-icon" style="--c:#ffa657"><i class="fas fa-brain"></i></div>
+                <h4>個性化記憶</h4>
+                <p>AI 自動從每次對話中學習你的偏好與習慣，下次開口就懂你，越用越貼心。</p>
+            </div>
+            <div class="xitto-card">
+                <div class="xcard-icon" style="--c:#ff7b72"><i class="fas fa-folder-open"></i></div>
+                <h4>工作目錄整合</h4>
+                <p>直接在對話中瀏覽、上傳、預覽本機檔案，把檔案內容帶入 AI 對話，無需複製貼上。</p>
+            </div>
+            <div class="xitto-card">
+                <div class="xcard-icon" style="--c:#79c0ff"><i class="fas fa-eye"></i></div>
+                <h4>思考過程可視化</h4>
+                <p>啟用延伸思考模式，看見 AI 一步步的推理過程，讓決策更透明、更有說服力。</p>
+            </div>
+        </div>
+
     </div>
 </section>
 

@@ -1211,239 +1211,386 @@ footer p {
 }
 
 
-/* --- Xitto 產品下載區塊 --- */
+/* =====================================================
+   Xitto 產品區塊 — 全面重設計
+   ===================================================== */
 .xitto-section {
-    background: linear-gradient(135deg, #0a1628 0%, #0d2545 50%, #0a1628 100%);
-    padding: 100px 0;
+    background: #07111f;
+    padding: 110px 0 90px;
     color: #fff;
     overflow: hidden;
     position: relative;
 }
-.xitto-section::before {
-    content: '';
+.xitto-glow {
     position: absolute;
-    top: -40%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0,123,255,0.12) 0%, transparent 70%);
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(0,100,255,0.13) 0%, rgba(88,100,255,0.06) 45%, transparent 70%);
     pointer-events: none;
 }
-.xitto-inner {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-.xitto-info {
-    flex: 1;
-    min-width: 0;
+
+/* Header — 居中 */
+.xitto-header {
+    text-align: center;
+    margin-bottom: 56px;
 }
 .xitto-badge {
     display: inline-block;
-    background: rgba(0,123,255,0.2);
-    border: 1px solid rgba(0,123,255,0.4);
+    background: rgba(88,169,255,0.12);
+    border: 1px solid rgba(88,169,255,0.3);
     color: #58a9ff;
-    font-size: 0.78em;
+    font-size: 0.72em;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 .xitto-title {
-    font-size: 3.8em;
-    font-weight: 800;
+    font-size: 5em;
+    font-weight: 900;
     color: #fff;
-    text-align: left;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 0%, #a0c8ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .xitto-tagline {
-    font-size: 1.25em;
-    color: #a0c4ff;
-    text-align: left;
+    font-size: 1.3em;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
     margin-bottom: 12px;
     font-weight: 500;
 }
 .xitto-desc {
-    font-size: 1em;
-    color: rgba(255,255,255,0.65);
-    text-align: left;
+    font-size: 0.98em;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
     line-height: 1.7;
-    margin-bottom: 32px;
-}
-.xitto-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 24px;
-    margin-bottom: 36px;
-}
-.xitto-feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.95em;
-    color: rgba(255,255,255,0.82);
-}
-.xitto-feature i {
-    color: #58a9ff;
-    font-size: 1em;
-    width: 18px;
-    flex-shrink: 0;
-}
-.xitto-download-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-}
-.btn-dl {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
-    min-width: 200px;
-}
-.btn-dl i {
-    font-size: 1.8em;
-    flex-shrink: 0;
-}
-.btn-dl-text {
-    display: flex;
-    flex-direction: column;
-}
-.btn-dl-main {
-    font-size: 1em;
-    font-weight: 700;
-    line-height: 1.2;
-}
-.btn-dl-sub {
-    font-size: 0.75em;
-    opacity: 0.75;
-    margin-top: 2px;
-}
-.btn-dl-win {
-    background: #007bff;
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(0,123,255,0.35);
-}
-.btn-dl-win:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(0,123,255,0.5);
-    color: #fff;
-}
-.btn-dl-mac {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-.btn-dl-mac:hover:not(.btn-dl-soon) {
-    transform: translateY(-3px);
-    background: rgba(255,255,255,0.18);
-    color: #fff;
-}
-.btn-dl-soon {
-    opacity: 0.45;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-.xitto-version {
-    font-size: 0.82em;
-    color: rgba(255,255,255,0.38);
-    text-align: left;
     margin: 0;
 }
 
-/* Mockup window */
-.xitto-mockup {
-    flex: 0 0 420px;
-    max-width: 420px;
+/* ---- App Showcase Mockup ---- */
+.xitto-showcase {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    position: relative;
+    filter: drop-shadow(0 40px 80px rgba(0,80,255,0.22));
 }
 .mockup-window {
-    background: #1a2234;
+    background: #0d1627;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 .mockup-titlebar {
     background: #111827;
-    padding: 12px 16px;
+    padding: 10px 16px;
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.mockup-dot {
-    width: 11px; height: 11px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
+.mockup-dots { display: flex; gap: 6px; }
+.mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
 .mockup-dot.red    { background: #ff5f57; }
 .mockup-dot.yellow { background: #febc2e; }
 .mockup-dot.green  { background: #28c840; }
 .mockup-title-text {
-    font-size: 0.78em;
-    color: rgba(255,255,255,0.4);
-    margin-left: 8px;
+    font-size: 0.72em;
+    color: rgba(255,255,255,0.3);
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    margin: 0 auto 0 8px;
+}
+.mockup-tabs {
+    display: flex;
+    gap: 4px;
+}
+.mockup-tab {
+    font-size: 0.68em;
+    color: rgba(255,255,255,0.35);
+    padding: 3px 10px;
+    border-radius: 5px;
+    cursor: default;
+}
+.mockup-tab.active {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.7);
 }
 .mockup-body {
     display: flex;
-    height: 280px;
+    height: 320px;
 }
+
+/* Sidebar */
 .mockup-sidebar {
-    width: 80px;
-    background: #131c2e;
+    width: 160px;
+    background: #0a101e;
     border-right: 1px solid rgba(255,255,255,0.05);
-    padding: 14px 10px;
+    padding: 12px 10px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    overflow: hidden;
 }
+.mockup-agent-badge {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, #0969da, #6e40c9);
+    border-radius: 8px;
+    display: flex;align-items:center;justify-content:center;
+    font-size: 0.75em;font-weight:700;color:#fff;
+    margin-bottom: 8px;
+}
+.mockup-conv-list { display: flex; flex-direction: column; gap: 4px; }
 .mockup-conv {
-    height: 28px;
-    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 8px;
     border-radius: 6px;
+    background: transparent;
 }
-.mockup-conv.active {
-    background: rgba(0,123,255,0.35);
+.mockup-conv.active { background: rgba(9,105,218,0.2); }
+.mockup-conv-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #58a9ff;
+    flex-shrink: 0;
 }
+.mockup-conv-label {
+    font-size: 0.65em;
+    color: rgba(255,255,255,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mockup-conv.active .mockup-conv-label { color: rgba(255,255,255,0.85); }
+
+/* Chat area */
 .mockup-chat {
     flex: 1;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    overflow: hidden;
+    background: #0d1627;
+}
+.mockup-msg { display: flex; }
+.mockup-msg.user { justify-content: flex-end; }
+.mockup-msg.ai   { align-items: flex-start; gap: 8px; }
+.mockup-avatar {
+    width: 24px; height: 24px;
+    background: linear-gradient(135deg, #1a7f37, #0969da);
+    border-radius: 6px;
+    display: flex;align-items:center;justify-content:center;
+    font-size: 0.7em; color:#fff; flex-shrink:0;
+}
+.mockup-bubble-wrap { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.mockup-bubble {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.68em;
+    line-height: 1.5;
+    max-width: 90%;
+}
+.mockup-bubble.user {
+    background: rgba(9,105,218,0.35);
+    color: rgba(255,255,255,0.85);
+    border-radius: 10px 10px 2px 10px;
+}
+.mockup-bubble.ai {
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.75);
+    border-radius: 2px 10px 10px 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+.mockup-thinking {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 0.62em;
+    color: rgba(88,169,255,0.7);
+    padding: 2px 0;
+}
+.mockup-think-icon { font-size: 0.85em; animation: spin 2s linear infinite; display:inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.mockup-diff-banner {
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(163,113,247,0.12);
+    border: 1px solid rgba(163,113,247,0.25);
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 0.85em;
+}
+.diff-count { color: rgba(210,168,255,0.9); font-weight:600; }
+.diff-action {
+    color: #7ee787;
+    font-size: 0.9em;
+    cursor: default;
+    border: 1px solid rgba(126,231,135,0.3);
+    border-radius: 4px;
+    padding: 1px 6px;
+}
+.mockup-diff-line {
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-bottom: 3px;
+    font-family: monospace;
+}
+.mockup-diff-line.del {
+    background: rgba(248,81,73,0.12);
+    color: rgba(255,120,115,0.8);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,120,115,0.4);
+}
+.mockup-diff-line.ins {
+    background: rgba(63,185,80,0.12);
+    color: rgba(126,231,135,0.85);
+}
+
+/* File panel */
+.mockup-file-panel {
+    width: 140px;
+    background: #0a101e;
+    border-left: 1px solid rgba(255,255,255,0.05);
+    padding: 10px;
     overflow: hidden;
 }
-.mockup-msg {
-    height: 22px;
-    border-radius: 8px;
-    width: 60%;
+.mockup-file-header {
+    display: flex; align-items: center; gap: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.mockup-msg.user {
-    background: rgba(0,123,255,0.35);
-    align-self: flex-end;
-    width: 50%;
-}
-.mockup-msg.ai {
+.mockup-file-icon { font-size: 0.75em; }
+.mockup-file-name { font-size: 0.62em; color: rgba(255,255,255,0.5); font-weight:600; }
+.mockup-file-lines { display: flex; flex-direction: column; gap: 5px; }
+.mockup-line {
+    height: 7px;
+    border-radius: 3px;
     background: rgba(255,255,255,0.08);
-    align-self: flex-start;
-    width: 72%;
+    width: 85%;
 }
-.mockup-msg.wide { width: 85%; }
-.mockup-msg.short { width: 32%; }
+.mockup-line.short { width: 55%; }
+.mockup-line.wide  { width: 95%; }
+.mockup-line.diff-del {
+    background: rgba(248,81,73,0.25);
+    border-left: 2px solid rgba(248,81,73,0.6);
+}
+.mockup-line.diff-ins {
+    background: rgba(63,185,80,0.2);
+    border-left: 2px solid rgba(63,185,80,0.55);
+}
+
+/* ---- Download Buttons ---- */
+.xitto-download-center {
+    text-align: center;
+    margin-bottom: 72px;
+}
+.xitto-download-row {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+.btn-dl {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
+}
+.btn-dl i { font-size: 1.9em; flex-shrink: 0; }
+.btn-dl-text { display: flex; flex-direction: column; text-align: left; }
+.btn-dl-main { font-size: 1em; font-weight: 700; line-height: 1.2; }
+.btn-dl-sub  { font-size: 0.72em; opacity: 0.7; margin-top: 3px; }
+.btn-dl-win {
+    background: #0969da;
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(9,105,218,0.45);
+}
+.btn-dl-win:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(9,105,218,0.6); color:#fff; }
+.btn-dl-mac {
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+.btn-dl-mac:hover:not(.btn-dl-soon) { transform: translateY(-3px); background: rgba(255,255,255,0.14); color:#fff; }
+.btn-dl-soon { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.xitto-version {
+    font-size: 0.78em;
+    color: rgba(255,255,255,0.3);
+    margin: 0;
+    text-align: center;
+}
+
+/* ---- Feature Cards ---- */
+.xitto-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.xitto-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.xitto-card:hover {
+    background: rgba(255,255,255,0.055);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+}
+.xcard-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--c) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1em;
+    color: var(--c);
+    margin-bottom: 16px;
+}
+.xitto-card h4 {
+    font-size: 1em;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    text-align: left;
+    margin-bottom: 10px;
+}
+.xitto-card p {
+    font-size: 0.88em;
+    color: rgba(255,255,255,0.45);
+    text-align: left;
+    line-height: 1.65;
+    margin: 0;
+}
 
 @media (max-width: 900px) {
-    .xitto-inner { flex-direction: column; gap: 40px; }
-    .xitto-mockup { flex: none; max-width: 100%; width: 100%; }
-    .xitto-title { font-size: 2.8em; }
-    .xitto-features { grid-template-columns: 1fr; }
-    .btn-dl { min-width: 0; flex: 1; }
+    .xitto-title { font-size: 3.2em; }
+    .xitto-cards { grid-template-columns: 1fr 1fr; }
+    .mockup-file-panel { display: none; }
+    .mockup-sidebar { width: 120px; }
+}
+@media (max-width: 600px) {
+    .xitto-title { font-size: 2.5em; }
+    .xitto-cards { grid-template-columns: 1fr; }
+    .mockup-sidebar { display: none; }
+    .btn-dl { width: 100%; }
+    .xitto-download-row { flex-direction: column; width: 100%; }
 }
 
 /* --- 關鍵幀動畫 (Keyframe Animations) --- */
