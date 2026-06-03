@@ -1,495 +1,586 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiza AI Agent | 您的企業智能轉型夥伴</title>
-    <meta name="description" content="Xiza 專注客製化 AI Agent 開發，為企業提供智能自動化、數據洞察及創新業務解決方案，賦能高效未來。">
+    <title>Xitto — Free Desktop AI Assistant | Xiza</title>
+    <meta name="description" content="Xitto is a free desktop AI chat assistant with multi-agent support, smart document editing, and personalized memory.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="gstatic" crossorigin href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <a href="index.html">Xiza</a> </div>
-        <ul class="nav-links">
-            <li><a href="#about">關於我們</a></li>
-            <li><a href="#services">核心服務</a></li>
-            <li><a href="#methodology">合作流程</a></li>
-            <li><a href="#tech-advantage">技術實力</a></li>
-            <li><a href="#faq">常見問題</a></li>
-            <li><a href="#contact">立即諮詢</a></li>
-            <li><a href="#xitto">Xitto 下載</a></li>
+<!-- ========== NAV ========== -->
+<header class="nav-header" id="navHeader">
+    <nav class="nav-inner">
+        <a class="nav-logo" href="#">Xiza</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features" data-i18n="nav_feat">Features</a></li>
+            <li><a href="#download" data-i18n="nav_dl">Download</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <div class="lang-switcher" id="langSwitcher">
+            <button data-lang="en" class="lang-btn active">EN</button>
+            <button data-lang="zh-TW" class="lang-btn">繁</button>
+            <button data-lang="zh-CN" class="lang-btn">简</button>
         </div>
+        <a href="#download" class="nav-cta" data-i18n="nav_cta">Download Xitto</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 </header>
 
-<section id="hero" class="hero-section">
-    <div class="hero-content">
-        <h1>Xiza AI Agent：賦能您的企業智能未來</h1>
-        <p>從繁瑣走向智能，為您量身打造高效、創新的專屬 AI 智能體。</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">預約免費諮詢</a>
-            <a href="#services" class="btn btn-secondary">了解核心服務</a>
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="container hero-container">
+        <div class="hero-text">
+            <span class="hero-badge" data-i18n="hero_badge">Free · No Installation Required</span>
+            <h1 class="hero-h1" data-i18n-html="hero_h1">AI Conversations,<br><span class="grad-text">Evolved</span></h1>
+            <p class="hero-desc" data-i18n="hero_desc">Xitto is a free desktop AI chat assistant with multi-agent support, smart document editing, and personalized memory—making AI a true part of your workflow.</p>
+            <div class="hero-btns">
+                <a id="dlHeroWin" href="https://github.com/ishoplus/xitto-dist/releases/latest" target="_blank" class="btn-primary">
+                    <i class="fab fa-windows"></i>
+                    <span data-i18n="dl_btn_win">Download for Windows</span>
+                </a>
+                <a href="#features" class="btn-ghost">
+                    <span data-i18n="hero_btn_explore">Explore Features</span> <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+            <p class="hero-version" id="heroVersion"></p>
         </div>
-    </div>
-</section>
-
-<section id="about" class="about-section">
-    <div class="container">
-        <h2>關於 Xiza：您的 AI 轉型最佳夥伴</h2>
-        <p class="intro-text">
-            <strong>Xiza</strong> 致力於提供<strong>高度客製化 AI Agent 解決方案</strong>，結合前瞻技術與產業洞察，助企業實現數位化躍升與創新成長。
-        </p>
-        <div class="vision-mission">
-            <h3>我們的使命</h3>
-            <p>透過智能自動化，簡化複雜流程、優化決策效率，為各行各業開啟 AI 賦能的新篇章。</p>
-        </div>
-        <div class="team-intro">
-            <h3>核心團隊：專業淬煉，技術領航</h3>
-            <div class="team-members">
-                <div class="member-card">
-                    <h4>創辦人 / 技術長<br>王佑祥 (Sho Wang)</h4>
-                    <p>
-                        清華大學資訊工程學系畢業，擁有 <strong>10+ 年 Java 企業架構與 AI 系統整合經驗</strong>。
-                        曾任職於 <em>國泰人壽、全家便利商店、廣達電腦、途牛旅遊、蔚來汽車、奇瑞汽車</em> 等知名企業，
-                        跨足保險、零售、製造、旅遊及智慧電動車五大產業。
-                        深耕技術研發與應用落地，旨在引領 Xiza 打造革新業界的智能助手平台。
-                    </p>
-                </div>
-            </div>
-            <p>我們的團隊由對 AI 技術充滿熱情且經驗豐富的專家組成，堅信智能科技能為您的業務帶來革命性變革。</p>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="services-section">
-    <div class="container">
-        <h2>核心服務：AI Agent 助您領航未來</h2>
-        <p class="section-description">Xiza 的客製化 AI Agent 服務，為您的企業量身打造，開啟效率與創新兼具的全新局面。</p>
-        <div class="service-grid">
-            <div class="service-item">
-                <i class="fas fa-robot"></i> <h3>智能自動化</h3>
-                <p>自動處理重複性任務，釋放團隊生產力，將精力集中於戰略決策與創新。</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-headset"></i>
-                <h3>優化客戶體驗</h3>
-                <p>提供 24/7 智能客服與個性化互動，即時回應客戶需求，顯著提升滿意度。</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-chart-line"></i>
-                <h3>數據洞察決策</h3>
-                <p>深度分析海量數據，轉化為可執行洞察，助力企業做出更快速、精準的商業決策。</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-lightbulb"></i>
-                <h3>驅動業務創新</h3>
-                <p>探索 AI 賦能的全新服務與產品模式，協助企業開創市場競爭優勢。</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-dollar-sign"></i>
-                <h3>精簡營運成本</h3>
-                <p>透過 AI Agent 替代耗時人工，有效降低營運開支，優化資源配置。</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-handshake"></i>
-                <h3>強化內部協作</h3>
-                <p>AI Agent 促進跨部門信息流暢與任務協調，提升團隊整體協同效率。</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section id="xitto" class="xitto-section">
-    <div class="xitto-glow" aria-hidden="true"></div>
-    <div class="container">
-
-        <!-- 頂部 header：居中 -->
-        <div class="xitto-header">
-            <span class="xitto-badge">免費桌面應用</span>
-            <h2 class="xitto-title">Xitto</h2>
-            <p class="xitto-tagline">多 Agent AI 助手，讓智能真正融入您的日常工作</p>
-            <p class="xitto-desc">選文改寫、整體文件修改、記憶偏好、工作目錄整合<br>開箱即用，免設定，讓 AI 成為你真正的工作夥伴</p>
-        </div>
-
-        <!-- 大 Mockup 視窗 -->
-        <div class="xitto-showcase" aria-hidden="true">
+        <div class="hero-mockup" aria-hidden="true">
             <div class="mockup-window">
                 <div class="mockup-titlebar">
                     <div class="mockup-dots">
-                        <span class="mockup-dot red"></span>
-                        <span class="mockup-dot yellow"></span>
-                        <span class="mockup-dot green"></span>
+                        <span class="m-dot red"></span><span class="m-dot yellow"></span><span class="m-dot green"></span>
                     </div>
                     <span class="mockup-title-text">Xitto</span>
                     <div class="mockup-tabs">
-                        <span class="mockup-tab active">回應</span>
-                        <span class="mockup-tab">draft.md</span>
+                        <span class="m-tab active" data-i18n="mock_tab_resp">Response</span>
+                        <span class="m-tab">draft.md</span>
                     </div>
                 </div>
                 <div class="mockup-body">
-                    <!-- 左側 sidebar -->
                     <div class="mockup-sidebar">
-                        <div class="mockup-agent-badge">Pi</div>
-                        <div class="mockup-conv-list">
-                            <div class="mockup-conv active"><span class="mockup-conv-dot"></span><span class="mockup-conv-label">文件重構計畫</span></div>
-                            <div class="mockup-conv"><span class="mockup-conv-label">週報草稿</span></div>
-                            <div class="mockup-conv"><span class="mockup-conv-label">競品分析</span></div>
-                            <div class="mockup-conv"><span class="mockup-conv-label">程式除錯</span></div>
+                        <div class="m-agent-badge">Pi</div>
+                        <div class="m-conv-list">
+                            <div class="m-conv active"><span class="m-conv-dot"></span><span class="m-conv-label" data-i18n="mock_conv1">Doc Rewrite Plan</span></div>
+                            <div class="m-conv"><span class="m-conv-label" data-i18n="mock_conv2">Weekly Report</span></div>
+                            <div class="m-conv"><span class="m-conv-label" data-i18n="mock_conv3">Competitor Analysis</span></div>
+                            <div class="m-conv"><span class="m-conv-label" data-i18n="mock_conv4">Debugging</span></div>
                         </div>
                     </div>
-                    <!-- 主聊天區 -->
                     <div class="mockup-chat">
-                        <div class="mockup-msg user">
-                            <div class="mockup-bubble user">把第二段改得更簡潔，語氣更正式</div>
+                        <div class="m-msg user">
+                            <div class="m-bubble user" data-i18n="mock_user_msg">Make the second paragraph more concise and formal</div>
                         </div>
-                        <div class="mockup-msg ai">
-                            <div class="mockup-avatar">✦</div>
-                            <div class="mockup-bubble-wrap">
-                                <div class="mockup-thinking">
-                                    <span class="mockup-think-icon">◎</span> 分析文件結構中…
-                                </div>
-                                <div class="mockup-bubble ai">
-                                    <div class="mockup-diff-banner">
-                                        <span class="diff-count">2 處修改</span>
-                                        <span class="diff-action">套用全部</span>
+                        <div class="m-msg ai">
+                            <div class="m-avatar">✦</div>
+                            <div class="m-bubble-wrap">
+                                <div class="m-thinking"><span class="m-think-spin">◎</span> <span data-i18n="mock_thinking">Analyzing document structure…</span></div>
+                                <div class="m-bubble ai">
+                                    <div class="m-diff-banner">
+                                        <span class="m-diff-count" data-i18n="mock_diff_count">2 changes</span>
+                                        <span class="m-diff-apply" data-i18n="mock_diff_apply">Apply all</span>
                                     </div>
-                                    <div class="mockup-diff-line del">原有冗長的描述性段落，包含不必要的背景說明。</div>
-                                    <div class="mockup-diff-line ins">精簡後的核心論述，直接切入重點。</div>
+                                    <div class="m-diff-line del" data-i18n="mock_diff_del">The original verbose paragraph with unnecessary background context.</div>
+                                    <div class="m-diff-line ins" data-i18n="mock_diff_ins">Concise rewrite that cuts directly to the point.</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- 右側文件面板 -->
-                    <div class="mockup-file-panel">
-                        <div class="mockup-file-header">
-                            <span class="mockup-file-icon">📄</span>
-                            <span class="mockup-file-name">draft.md</span>
-                        </div>
-                        <div class="mockup-file-lines">
-                            <div class="mockup-line normal"></div>
-                            <div class="mockup-line normal short"></div>
-                            <div class="mockup-line diff-del"></div>
-                            <div class="mockup-line diff-ins"></div>
-                            <div class="mockup-line normal"></div>
-                            <div class="mockup-line normal short"></div>
-                            <div class="mockup-line normal wide"></div>
+                    <div class="mockup-file">
+                        <div class="m-file-header"><span>📄</span><span class="m-file-name">draft.md</span></div>
+                        <div class="m-file-lines">
+                            <div class="m-line"></div><div class="m-line short"></div>
+                            <div class="m-line diff-del"></div><div class="m-line diff-ins"></div>
+                            <div class="m-line"></div><div class="m-line wide"></div><div class="m-line short"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- 下載按鈕 -->
-        <div class="xitto-download-center">
-            <div class="xitto-download-row">
-                <a id="dlWindows" href="https://github.com/ishoplus/xitto/releases/latest" target="_blank" class="btn-dl btn-dl-win">
-                    <i class="fab fa-windows"></i>
-                    <div class="btn-dl-text">
-                        <span class="btn-dl-main">下載 Windows 版</span>
-                        <span class="btn-dl-sub">.exe · 免安裝，開箱即用</span>
-                    </div>
-                </a>
-                <a id="dlMac" href="#" class="btn-dl btn-dl-mac btn-dl-soon" aria-disabled="true">
-                    <i class="fab fa-apple"></i>
-                    <div class="btn-dl-text">
-                        <span class="btn-dl-main">Mac 版</span>
-                        <span class="btn-dl-sub">即將推出</span>
-                    </div>
-                </a>
-            </div>
-            <p class="xitto-version" id="xittoVersion"></p>
-        </div>
-
-        <!-- Feature Cards -->
-        <div class="xitto-cards">
-            <div class="xitto-card">
-                <div class="xcard-icon" style="--c:#58a9ff"><i class="fas fa-robot"></i></div>
-                <h4>多 Agent 角色</h4>
-                <p>每個 Agent 有獨特的專長與個性，從創意寫作到程式除錯，選對夥伴事半功倍。</p>
-            </div>
-            <div class="xitto-card">
-                <div class="xcard-icon" style="--c:#7ee787"><i class="fas fa-code-branch"></i></div>
-                <h4>文件 Diff 編輯</h4>
-                <p>自然語言描述修改需求，AI 自動定位段落並展示 inline 字元級差異對比，確認後一鍵套用。</p>
-            </div>
-            <div class="xitto-card">
-                <div class="xcard-icon" style="--c:#d2a8ff"><i class="fas fa-highlighter"></i></div>
-                <h4>選文改寫</h4>
-                <p>選取任意段落，點擊 chip 或自訂描述，AI 改寫後顯示前後對比，支援逐一審閱。</p>
-            </div>
-            <div class="xitto-card">
-                <div class="xcard-icon" style="--c:#ffa657"><i class="fas fa-brain"></i></div>
-                <h4>個性化記憶</h4>
-                <p>AI 自動從每次對話中學習你的偏好與習慣，下次開口就懂你，越用越貼心。</p>
-            </div>
-            <div class="xitto-card">
-                <div class="xcard-icon" style="--c:#ff7b72"><i class="fas fa-folder-open"></i></div>
-                <h4>工作目錄整合</h4>
-                <p>直接在對話中瀏覽、上傳、預覽本機檔案，把檔案內容帶入 AI 對話，無需複製貼上。</p>
-            </div>
-            <div class="xitto-card">
-                <div class="xcard-icon" style="--c:#79c0ff"><i class="fas fa-eye"></i></div>
-                <h4>思考過程可視化</h4>
-                <p>啟用延伸思考模式，看見 AI 一步步的推理過程，讓決策更透明、更有說服力。</p>
-            </div>
-        </div>
-
     </div>
 </section>
 
-<section id="methodology" class="methodology-section">
+<!-- ========== FEATURES ========== -->
+<section class="features-section" id="features">
     <div class="container">
-        <h2>Xiza 合作流程：透明、高效、客製化</h2>
-        <p class="section-description">我們清晰嚴謹的六步驟流程，確保您的 AI Agent 解決方案完美契合業務需求。</p>
-        <div class="process-steps">
-            <div class="step-item">
-                <div class="step-icon">1</div>
-                <h3>需求盤點與定義</h3>
-                <p>深入對話，全面理解您的業務痛點、目標與期望，定義 AI Agent 應用場景。</p>
+        <div class="section-header">
+            <h2 data-i18n-html="feat_h2">One Assistant, <span class="grad-text">Supercharge</span> Your Workflow</h2>
+            <p class="section-sub" data-i18n="feat_sub">From daily chats to complex document editing, Xitto makes every step smarter.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#58a9ff"><i class="fas fa-robot"></i></div>
+                <h3 data-i18n="feat1_title">Multi-Agent Roles</h3>
+                <p data-i18n="feat1_desc">Each Agent brings unique expertise and personality—from creative writing to code debugging, pick the right partner.</p>
             </div>
-            <div class="step-item">
-                <div class="step-icon">2</div>
-                <h3>解決方案規劃</h3>
-                <p>基於需求，設計具體的 Agent 架構、功能模組與技術路線圖，確保策略契合。</p>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#7ee787"><i class="fas fa-code-branch"></i></div>
+                <h3 data-i18n="feat2_title">Document Diff Editing</h3>
+                <p data-i18n="feat2_desc">Describe changes in plain language. Xitto finds the exact sections and shows character-level diffs. Apply all or review each change.</p>
             </div>
-            <div class="step-item">
-                <div class="step-icon">3</div>
-                <h3>敏捷開發與原型</h3>
-                <p>採用敏捷方法快速構建原型，透過多輪迭代，持續驗證並優化 Agent 性能。</p>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#d2a8ff"><i class="fas fa-highlighter"></i></div>
+                <h3 data-i18n="feat3_title">Smart Rewrite</h3>
+                <p data-i18n="feat3_desc">Select any passage, choose a preset or describe your goal. Review before/after comparison with character-level diff before applying.</p>
             </div>
-            <div class="step-item">
-                <div class="step-icon">4</div>
-                <h3>測試與品質驗證</h3>
-                <p>執行嚴格多維度測試，確保 AI Agent 的精確度、穩定性與安全合規性。</p>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#ffa657"><i class="fas fa-brain"></i></div>
+                <h3 data-i18n="feat4_title">Personalized Memory</h3>
+                <p data-i18n="feat4_desc">Xitto learns your preferences from every conversation. No more repeating yourself—it knows your habits and style.</p>
             </div>
-            <div class="step-item">
-                <div class="step-icon">5</div>
-                <h3>整合與部署實施</h3>
-                <p>專業團隊協助將 AI Agent 無縫整合至您的現有系統，確保順暢上線。</p>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#ff7b72"><i class="fas fa-folder-open"></i></div>
+                <h3 data-i18n="feat5_title">Workspace Integration</h3>
+                <p data-i18n="feat5_desc">Browse, upload, and preview local files directly in chat. Bring file content into the conversation—no copy-paste needed.</p>
             </div>
-            <div class="step-item">
-                <div class="step-icon">6</div>
-                <h3>持續優化與支持</h3>
-                <p>提供長期技術支援與定期性能優化，確保 AI Agent 始終保持領先效能。</p>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#79c0ff"><i class="fas fa-eye"></i></div>
+                <h3 data-i18n="feat6_title">Thinking Visualization</h3>
+                <p data-i18n="feat6_desc">Enable extended thinking mode to watch the AI reason step by step—making decisions more transparent and trustworthy.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="tech-advantage" class="tech-advantage-section">
-    <div class="container">
-        <h2>Xiza 技術實力：領先 AI，堅實基石</h2>
-        <p class="section-description">我們運用最前沿的 AI 技術棧，為您的業務打造性能卓越、安全可靠的智能 Agent。</p>
-        <div class="tech-grid">
-            <div class="tech-item">
-                <i class="fas fa-brain"></i>
-                <h3>最前沿 LLM 整合</h3>
-                <p>靈活集成 GPT、Llama 等最新大型語言模型，賦予 Agent 強大的理解與生成能力。</p>
-            </div>
-            <div class="tech-item">
-                <i class="fas fa-database"></i>
-                <h3>RAG 強化知識檢索</h3>
-                <p>結合檢索增強生成 (RAG) 技術，讓 Agent 基於企業私有數據提供準確回應，減少幻覺。</p>
-            </div>
-            <div class="tech-item">
-                <i class="fas fa-cogs"></i>
-                <h3>多 Agent 協作框架</h3>
-                <p>構建多個 AI Agent 協同工作的複雜系統，實現更宏觀、多步驟的任務自動化。</p>
-            </div>
-            <div class="tech-item">
-                <i class="fas fa-chart-area"></i>
-                <h3>高擴展性與彈性</h3>
-                <p>採用微服務架構設計，確保 AI Agent 系統可根據業務成長快速擴展與調整。</p>
-            </div>
-            <div class="tech-item">
-                <i class="fas fa-shield-alt"></i>
-                <h3>頂級數據安全防護</h3>
-                <p>嚴格遵守數據保護規範，採用領先加密技術與訪問控制，保障您的商業機密。</p>
-            </div>
-            <div class="tech-item">
-                <i class="fas fa-users-cog"></i>
-                <h3>客製化模型訓練</h3>
-                <p>針對特定業務場景進行模型微調與訓練，確保 Agent 輸出高度精準與符合語境。</p>
-            </div>
+<!-- ========== SPOTLIGHT 1 ========== -->
+<section class="spotlight-section" id="spotlight1">
+    <div class="container spotlight-inner">
+        <div class="spotlight-text">
+            <span class="spotlight-label" data-i18n="sp1_label">Smart Document Editing</span>
+            <h2 data-i18n-html="sp1_h2">Just Describe It,<br><span class="grad-text">Documents Updated</span></h2>
+            <p data-i18n="sp1_desc">No more copy-pasting or manual comparison. Tell Xitto what to change, it finds the right paragraph, highlights every difference, and you confirm with one click.</p>
+            <ul class="spotlight-list">
+                <li><i class="fas fa-check"></i><span data-i18n="sp1_li1">Natural language change requests</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp1_li2">Inline diff: red for deleted, green for added</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp1_li3">Review one by one or apply all at once</span></li>
+            </ul>
         </div>
-    </div>
-</section>
-
-<section id="why-us" class="why-us-section">
-    <div class="container">
-        <h2>為何選擇 Xiza：您的智能轉型首選</h2>
-        <p class="section-description">選擇 Xiza，不僅是選擇技術，更是選擇一個值得信賴的長期戰略夥伴。</p>
-        <div class="advantage-list">
-            <div class="advantage-item">
-                <h3>深度客製，而非套用</h3>
-                <p>我們傾聽您的獨特需求，為您量身打造專屬 AI Agent，而非複製通用模板。</p>
-            </div>
-            <div class="advantage-item">
-                <h3>實戰專家，經驗豐富</h3>
-                <p>團隊成員皆為 AI 領域資深專家，具備跨產業豐富實戰經驗，確保方案落地有成。</p>
-            </div>
-            <div class="advantage-item">
-                <h3>效益導向，成果為先</h3>
-                <p>我們專注於為您創造實際業務價值，確保 AI 投入能帶來顯著的效率與回報。</p>
-            </div>
-            <div class="advantage-item">
-                <h3>前瞻視野，持續創新</h3>
-                <p>緊追 AI 最新發展，確保您的解決方案永保領先，隨市場脈動不斷升級。</p>
-            </div>
-            <div class="advantage-item">
-                <h3>透明溝通，緊密合作</h3>
-                <p>專案全程透明化，與您緊密協作，確保每一步都符合您的期待。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="faq" class="faq-section">
-    <div class="container">
-        <h2>常見問題：消除您的疑慮</h2>
-        <div class="faq-items">
-            <div class="faq-item">
-                <h3>AI Agent 如何具體幫助我的公司？</h3>
-                <p>AI Agent 能自動化重複性任務、提供智能決策支援、優化客戶互動、洞察數據趨勢，從而顯著提升營運效率、降低成本、加速創新，並開拓新業務機會。</p>
-            </div>
-            <div class="faq-item">
-                <h3>與 Xiza 合作的起步流程是？</h3>
-                <p>非常簡單！透過我們的聯絡表單或直接致電，我們的專家將迅速與您安排一次免費的初步諮詢，深入了解您的具體需求與目標。</p>
-            </div>
-            <div class="faq-item">
-                <h3>導入 AI Agent 的時間與成本如何估算？</h3>
-                <p>由於每個客製化 AI Agent 的複雜度與功能需求差異大，專案週期和成本會因個案而異。在初步需求盤點後，我們將能提供您詳細且精確的專案規劃與預算評估。</p>
-            </div>
-            <div class="faq-item">
-                <h3>Xiza 如何保障我的數據安全與隱私？</h3>
-                <p>數據安全是我們的首要考量。我們嚴格遵守國際數據保護規範，並實施多層次安全措施，包括業界領先的加密技術、嚴格的訪問控制、定期的安全審計與合規性檢查，確保您的商業數據絕對機密與安全。</p>
-            </div>
-            <div class="faq-item">
-                <h3>即便沒有現成案例，Xiza 如何保證服務品質？</h3>
-                <p>Xiza 的核心競爭力源於我們頂尖的 AI 專家團隊，他們具備深厚的技術功底與豐富的跨產業專案經驗。我們透過標準化且敏捷的開發流程、嚴格的品質監控、以及與客戶的緊密協作，確保每個客製化 Agent 都能達到最高標準。我們也歡迎客戶從「概念驗證 (PoC)」專案開始，親身驗證我們的實力。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>立即聯繫 Xiza，開啟您的智能轉型之旅！</h2>
-        <p>準備好讓 AI 賦能您的業務了嗎？填寫表單或直接聯繫我們，專業團隊隨時為您服務。</p>
-        <div class="contact-grid">
-            <form class="contact-form">
-                <h3>填寫表單，快速溝通</h3>
-                <input type="text" placeholder="您的姓名 *" required>
-                <input type="text" placeholder="公司名稱">
-                <input type="email" placeholder="電子郵件 *" required>
-                <input type="tel" placeholder="聯絡電話">
-                <textarea placeholder="您的需求與問題說明..." rows="5"></textarea>
-                <button type="submit" class="btn btn-primary">提交諮詢</button>
-            </form>
-            <div class="contact-info">
-                <h3>或直接與我們聯絡</h3>
-                <div class="social-links">
-                    <a href="https://line.me/ti/p/@868fegki" target="_blank" aria-label="Line 官方帳號"><i class="fab fa-line"></i></a>
+        <div class="spotlight-visual">
+            <div class="sv-window">
+                <div class="sv-header">
+                    <div class="sv-dots"><span class="m-dot red"></span><span class="m-dot yellow"></span><span class="m-dot green"></span></div>
+                    <span class="sv-title" data-i18n="sv1_title">draft.md — Full Document Edit</span>
+                </div>
+                <div class="sv-diff-bar">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-i18n="sv_changes">3 changes</span>
+                    <div style="flex:1"></div>
+                    <button class="sv-btn-discard" data-i18n="sv_discard">Discard</button>
+                    <button class="sv-btn-review" data-i18n="sv_review">Review</button>
+                    <button class="sv-btn-apply" data-i18n="sv_apply">Apply All</button>
+                </div>
+                <div class="sv-content">
+                    <div class="sv-line normal"></div>
+                    <div class="sv-line normal short"></div>
+                    <div class="sv-line del" data-i18n="sv_del1">Verbose original paragraph with unnecessary context.</div>
+                    <div class="sv-line ins" data-i18n="sv_ins1">Concise rewrite that gets straight to the point.</div>
+                    <div class="sv-line normal"></div>
+                    <div class="sv-line del" data-i18n="sv_del2">Another section that needed revision.</div>
+                    <div class="sv-line ins" data-i18n="sv_ins2">Clearer and more persuasive rewrite.</div>
+                    <div class="sv-line normal wide"></div>
+                    <div class="sv-line normal short"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer>
+<!-- ========== SPOTLIGHT 2 ========== -->
+<section class="spotlight-section spotlight-reverse" id="spotlight2">
+    <div class="container spotlight-inner">
+        <div class="spotlight-text">
+            <span class="spotlight-label" data-i18n="sp2_label">Personalized Memory System</span>
+            <h2 data-i18n-html="sp2_h2">Learns With Every Chat,<br><span class="grad-text">Memory Grows</span></h2>
+            <p data-i18n="sp2_desc">Xitto automatically learns your habits, preferences, and context from every conversation—stored as editable memory cards you can view and manage anytime.</p>
+            <ul class="spotlight-list">
+                <li><i class="fas fa-check"></i><span data-i18n="sp2_li1">Auto-categorized: Profile, Learning, Preferences, Notes</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp2_li2">View and manually edit in the memory panel</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp2_li3">Clear all anytime to protect your privacy</span></li>
+            </ul>
+        </div>
+        <div class="spotlight-visual">
+            <div class="sv-window sv-memory">
+                <div class="sv-header">
+                    <div class="sv-dots"><span class="m-dot red"></span><span class="m-dot yellow"></span><span class="m-dot green"></span></div>
+                    <span class="sv-title" data-i18n="sv2_title">🧠 My Memory</span>
+                </div>
+                <div class="sv-memory-content">
+                    <div class="sv-mem-group">
+                        <div class="sv-mem-label" data-i18n="mem_profile">Profile</div>
+                        <div class="sv-mem-item" data-i18n="mem_p1">Software engineer, prefers concise technical explanations</div>
+                        <div class="sv-mem-item" data-i18n="mem_p2">Works in Traditional Chinese</div>
+                    </div>
+                    <div class="sv-mem-group">
+                        <div class="sv-mem-label" data-i18n="mem_prefs">Preferences</div>
+                        <div class="sv-mem-item" data-i18n="mem_pr1">Keep responses brief, avoid lengthy explanations</div>
+                        <div class="sv-mem-item" data-i18n="mem_pr2">Give code examples first when debugging</div>
+                    </div>
+                    <div class="sv-mem-group">
+                        <div class="sv-mem-label" data-i18n="mem_recent">Recent Learning</div>
+                        <div class="sv-mem-item" data-i18n="mem_r1">Researching AI Agent architecture design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== DOWNLOAD ========== -->
+<section class="download-section" id="download">
+    <div class="dl-orb" aria-hidden="true"></div>
+    <div class="container dl-container">
+        <span class="dl-badge" data-i18n="dl_badge">Free Download</span>
+        <h2 class="dl-title" data-i18n="dl_h2">Start Using Xitto Today</h2>
+        <p class="dl-sub" data-i18n="dl_sub">No installation, no setup, ready to go. Windows version available now.</p>
+        <div class="dl-btns">
+            <a id="dlMainWin" href="https://github.com/ishoplus/xitto-dist/releases/latest" target="_blank" class="btn-primary btn-lg">
+                <i class="fab fa-windows"></i>
+                <div>
+                    <span class="btn-main-text" data-i18n="dl_btn_win">Download for Windows</span>
+                    <span class="btn-sub-text" data-i18n="dl_btn_win_sub">.exe · Portable, no install</span>
+                </div>
+            </a>
+            <a href="#" class="btn-secondary btn-lg btn-soon" aria-disabled="true">
+                <i class="fab fa-apple"></i>
+                <div>
+                    <span class="btn-main-text" data-i18n="dl_mac_title">Mac Version</span>
+                    <span class="btn-sub-text" data-i18n="dl_mac_sub">Coming Soon</span>
+                </div>
+            </a>
+        </div>
+        <p class="dl-version" id="dlVersion"></p>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about-section" id="about">
+    <div class="container about-inner">
+        <div class="about-text">
+            <span class="about-label" data-i18n="about_label">About Xiza</span>
+            <h2 data-i18n-html="about_h2">Building Truly<br><span class="grad-text">Useful AI Tools</span></h2>
+            <p data-i18n="about_p1">Xiza is a team focused on building AI assistant products. We believe great AI tools should genuinely integrate into your workflow—not add to your cognitive load. Xitto is our answer to that belief.</p>
+            <p data-i18n="about_p2">Have questions or partnership inquiries? Reach out to us through our Line official account.</p>
+            <a href="https://line.me/ti/p/@868fegki" target="_blank" class="about-line-btn">
+                <i class="fab fa-line"></i> <span data-i18n="about_line">Join Our Line Account</span>
+            </a>
+        </div>
+        <div class="about-founder">
+            <div class="founder-card">
+                <div class="founder-avatar">SW</div>
+                <div class="founder-info">
+                    <h4>Sho Wang <span class="founder-name-zh">王佑祥</span></h4>
+                    <p class="founder-title" data-i18n="founder_title">Founder / CTO</p>
+                    <p class="founder-bio" data-i18n="founder_bio">NTHU Computer Science. 10+ years in Java enterprise architecture and AI system integration. Previously at Cathay Life, FamilyMart, Quanta, NIO, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq-section" id="faq">
     <div class="container">
-        <p>&copy; 2025 Xiza AI Agent Services. All rights reserved.</p>
-        <ul class="footer-links">
-            <li><a href="privacy.html">隱私權政策</a></li>
-            <li><a href="terms.html">服務條款</a></li>
-        </ul>
+        <div class="section-header">
+            <h2 data-i18n="faq_h2">FAQ</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q1">Is Xitto completely free?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a1">Yes, the Xitto desktop app is completely free to download and use. AI responses require connecting to an AI service (configure your own API Key or use the default Agent).</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q2">Is my conversation and file data secure?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a2">Conversation history is stored locally and never uploaded to third-party servers. Memory data is also fully local—you can view or clear it anytime.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q3">Which AI models are supported?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a3">Xitto supports multiple AI models through its Agent system, including Claude, GPT, Gemini, and other major LLMs. Configure your preferred model and API Key in settings.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q4">How do I update to the latest version?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a4">Simply download the latest exe from the download page and replace the existing file. Your settings and conversation history will be preserved.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">Xiza</span>
+            <p data-i18n="footer_tagline">Building truly useful AI tools</p>
+        </div>
+        <div class="footer-links">
+            <a href="#features" data-i18n="nav_feat">Features</a>
+            <a href="#download" data-i18n="nav_dl">Download</a>
+            <a href="#about" data-i18n="nav_about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+            <a href="terms.html" data-i18n="footer_terms">Terms</a>
+            <a href="https://line.me/ti/p/@868fegki" target="_blank"><i class="fab fa-line"></i></a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <p data-i18n="footer_copy">© 2025 Xiza AI. All rights reserved.</p>
     </div>
 </footer>
 
+<!-- ========== SCRIPTS ========== -->
 <script>
-    // Fetch latest Xitto release from GitHub
-    fetch('https://api.github.com/repos/ishoplus/xitto/releases/latest')
-        .then(r => r.json())
-        .then(data => {
-            const exeAsset = data.assets && data.assets.find(a => a.name.endsWith('.exe'));
-            if (exeAsset && exeAsset.browser_download_url) {
-                const dlBtn = document.getElementById('dlWindows');
-                if (dlBtn) dlBtn.href = exeAsset.browser_download_url;
-            }
-            const vEl = document.getElementById('xittoVersion');
-            if (vEl && data.tag_name) {
-                const date = data.published_at ? new Date(data.published_at).toLocaleDateString('zh-TW') : '';
-                vEl.textContent = `最新版本：${data.tag_name}　${date ? '· 發布於 ' + date : ''}`;
-            }
-        })
-        .catch(() => {});
+/* ---- i18n ---- */
+const T = {
+  en: {
+    nav_feat:'Features', nav_dl:'Download', nav_about:'About', nav_cta:'Download Xitto',
+    hero_badge:'Free · No Installation Required',
+    hero_h1:'AI Conversations,<br><span class="grad-text">Evolved</span>',
+    hero_desc:'Xitto is a free desktop AI chat assistant with multi-agent support, smart document editing, and personalized memory—making AI a true part of your workflow.',
+    dl_btn_win:'Download for Windows', hero_btn_explore:'Explore Features',
+    mock_tab_resp:'Response', mock_conv1:'Doc Rewrite Plan', mock_conv2:'Weekly Report',
+    mock_conv3:'Competitor Analysis', mock_conv4:'Debugging',
+    mock_user_msg:'Make the second paragraph more concise and formal',
+    mock_thinking:'Analyzing document structure…',
+    mock_diff_count:'2 changes', mock_diff_apply:'Apply all',
+    mock_diff_del:'The original verbose paragraph with unnecessary background context.',
+    mock_diff_ins:'Concise rewrite that cuts directly to the point.',
+    feat_h2:'One Assistant, <span class="grad-text">Supercharge</span> Your Workflow',
+    feat_sub:'From daily chats to complex document editing, Xitto makes every step smarter.',
+    feat1_title:'Multi-Agent Roles', feat1_desc:'Each Agent brings unique expertise and personality—from creative writing to code debugging, pick the right partner.',
+    feat2_title:'Document Diff Editing', feat2_desc:'Describe changes in plain language. Xitto finds the exact sections and shows character-level diffs. Apply all or review each change.',
+    feat3_title:'Smart Rewrite', feat3_desc:'Select any passage, choose a preset or describe your goal. Review before/after comparison with character-level diff before applying.',
+    feat4_title:'Personalized Memory', feat4_desc:'Xitto learns your preferences from every conversation. No more repeating yourself—it knows your habits and style.',
+    feat5_title:'Workspace Integration', feat5_desc:'Browse, upload, and preview local files directly in chat. Bring file content into the conversation—no copy-paste needed.',
+    feat6_title:'Thinking Visualization', feat6_desc:'Enable extended thinking mode to watch the AI reason step by step—making decisions more transparent and trustworthy.',
+    sp1_label:'Smart Document Editing',
+    sp1_h2:'Just Describe It,<br><span class="grad-text">Documents Updated</span>',
+    sp1_desc:'No more copy-pasting or manual comparison. Tell Xitto what to change, it finds the right paragraph, highlights every difference, and you confirm with one click.',
+    sp1_li1:'Natural language change requests', sp1_li2:'Inline diff: red for deleted, green for added', sp1_li3:'Review one by one or apply all at once',
+    sv1_title:'draft.md — Full Document Edit', sv_changes:'3 changes',
+    sv_discard:'Discard', sv_review:'Review', sv_apply:'Apply All',
+    sv_del1:'Verbose original paragraph with unnecessary context.', sv_ins1:'Concise rewrite that gets straight to the point.',
+    sv_del2:'Another section that needed revision.', sv_ins2:'Clearer and more persuasive rewrite.',
+    sp2_label:'Personalized Memory System',
+    sp2_h2:'Learns With Every Chat,<br><span class="grad-text">Memory Grows</span>',
+    sp2_desc:'Xitto automatically learns your habits, preferences, and context from every conversation—stored as editable memory cards you can view and manage anytime.',
+    sp2_li1:'Auto-categorized: Profile, Learning, Preferences, Notes', sp2_li2:'View and manually edit in the memory panel', sp2_li3:'Clear all anytime to protect your privacy',
+    sv2_title:'🧠 My Memory', mem_profile:'Profile', mem_p1:'Software engineer, prefers concise technical explanations',
+    mem_p2:'Works in Traditional Chinese', mem_prefs:'Preferences',
+    mem_pr1:'Keep responses brief, avoid lengthy explanations', mem_pr2:'Give code examples first when debugging',
+    mem_recent:'Recent Learning', mem_r1:'Researching AI Agent architecture design',
+    dl_badge:'Free Download', dl_h2:'Start Using Xitto Today',
+    dl_sub:'No installation, no setup, ready to go. Windows version available now.',
+    dl_btn_win_sub:'.exe · Portable, no install', dl_mac_title:'Mac Version', dl_mac_sub:'Coming Soon',
+    about_label:'About Xiza',
+    about_h2:'Building Truly<br><span class="grad-text">Useful AI Tools</span>',
+    about_p1:'Xiza is a team focused on building AI assistant products. We believe great AI tools should genuinely integrate into your workflow—not add to your cognitive load. Xitto is our answer to that belief.',
+    about_p2:'Have questions or partnership inquiries? Reach out through our Line official account.',
+    about_line:'Join Our Line Account',
+    founder_title:'Founder / CTO',
+    founder_bio:'NTHU Computer Science. 10+ years in Java enterprise architecture and AI system integration. Previously at Cathay Life, FamilyMart, Quanta, NIO, and more.',
+    faq_h2:'FAQ',
+    faq_q1:'Is Xitto completely free?', faq_a1:'Yes, the Xitto desktop app is completely free to download and use. AI responses require connecting to an AI service (configure your own API Key or use the default Agent).',
+    faq_q2:'Is my data secure?', faq_a2:'Conversation history is stored locally and never uploaded to third-party servers. Memory data is also fully local—you can view or clear it anytime.',
+    faq_q3:'Which AI models are supported?', faq_a3:'Xitto supports multiple AI models through its Agent system, including Claude, GPT, Gemini, and other major LLMs. Configure your preferred model and API Key in settings.',
+    faq_q4:'How do I update?', faq_a4:'Download the latest exe from the download page and replace the existing file. Your settings and conversation history are preserved.',
+    footer_tagline:'Building truly useful AI tools', footer_privacy:'Privacy', footer_terms:'Terms',
+    footer_copy:'© 2025 Xiza AI. All rights reserved.'
+  },
+  'zh-TW': {
+    nav_feat:'功能', nav_dl:'下載', nav_about:'關於', nav_cta:'下載 Xitto',
+    hero_badge:'免費 · 開箱即用',
+    hero_h1:'AI 對話，<br><span class="grad-text">從這裡進化</span>',
+    hero_desc:'Xitto 是一款免費桌面 AI 聊天助手，支援多 Agent、文件智能編輯與個性化記憶，讓 AI 真正成為你的工作夥伴。',
+    dl_btn_win:'下載 Windows 版', hero_btn_explore:'探索功能',
+    mock_tab_resp:'回應', mock_conv1:'文件重構計畫', mock_conv2:'週報草稿',
+    mock_conv3:'競品分析', mock_conv4:'程式除錯',
+    mock_user_msg:'把第二段改得更簡潔，語氣更正式',
+    mock_thinking:'分析文件結構中…',
+    mock_diff_count:'2 處修改', mock_diff_apply:'套用全部',
+    mock_diff_del:'原有冗長的描述性段落，包含不必要的背景說明。',
+    mock_diff_ins:'精簡後的核心論述，直接切入重點。',
+    feat_h2:'一個助手，<span class="grad-text">全面升級</span>你的工作流',
+    feat_sub:'從日常對話到複雜的文件編輯，Xitto 讓每一步都更聰明。',
+    feat1_title:'多 Agent 角色', feat1_desc:'每個 Agent 有獨特的專長與個性，從創意寫作到程式除錯，選對夥伴事半功倍。',
+    feat2_title:'文件 Diff 編輯', feat2_desc:'自然語言描述修改需求，AI 自動定位段落並展示字元級差異對比，確認後一鍵套用。',
+    feat3_title:'選文改寫', feat3_desc:'選取任意段落，點擊預設或自訂描述，AI 改寫後顯示前後對比，支援逐一審閱。',
+    feat4_title:'個性化記憶', feat4_desc:'Xitto 自動從每次對話中學習你的偏好與習慣，下次不必再重複說明。',
+    feat5_title:'工作目錄整合', feat5_desc:'直接在對話中瀏覽、上傳、預覽本機檔案，把檔案內容帶入 AI 對話，無需複製貼上。',
+    feat6_title:'思考過程可視化', feat6_desc:'啟用延伸思考模式，看見 AI 一步步的推理過程，讓決策更透明、更有說服力。',
+    sp1_label:'智能文件編輯',
+    sp1_h2:'用說的，<br><span class="grad-text">直接改文件</span>',
+    sp1_desc:'不再複製貼上，不再手動對比。告訴 Xitto 你想怎麼改，它會找到對應段落、展示修改前後的差異，你只需要按一個確認。',
+    sp1_li1:'自然語言描述修改需求', sp1_li2:'Inline diff 高亮：紅色刪除 / 綠色新增', sp1_li3:'逐一審閱或一鍵套用全部',
+    sv1_title:'draft.md — 整體修改', sv_changes:'3 處修改',
+    sv_discard:'捨棄', sv_review:'逐一審閱', sv_apply:'套用全部',
+    sv_del1:'冗長的原始段落文字，包含許多不必要的說明。', sv_ins1:'精簡後的版本，直接表達核心觀點。',
+    sv_del2:'另一處需要改寫的段落內容。', sv_ins2:'更清晰、更具說服力的改寫版本。',
+    sp2_label:'個性化記憶系統',
+    sp2_h2:'越聊越懂你，<br><span class="grad-text">記憶成長</span>',
+    sp2_desc:'Xitto 在每次對話後自動學習你的習慣、偏好與需求，分類存儲為可查看、可修改的記憶卡片。',
+    sp2_li1:'自動分類：基本資料、學習紀錄、偏好、備忘', sp2_li2:'記憶面板隨時查看與手動編輯', sp2_li3:'完整清除，保護隱私',
+    sv2_title:'🧠 我的記憶', mem_profile:'基本資料', mem_p1:'工程師，偏好簡潔的技術說明',
+    mem_p2:'習慣用繁體中文回覆', mem_prefs:'習慣偏好',
+    mem_pr1:'回覆盡量精簡，避免冗長說明', mem_pr2:'遇到程式問題優先給範例',
+    mem_recent:'最近學習', mem_r1:'正在研究 AI Agent 架構設計',
+    dl_badge:'免費下載', dl_h2:'立即開始使用 Xitto',
+    dl_sub:'免安裝、免設定、開箱即用。Windows 版本現已發布。',
+    dl_btn_win_sub:'.exe · 免安裝，開箱即用', dl_mac_title:'Mac 版', dl_mac_sub:'即將推出',
+    about_label:'關於 Xiza',
+    about_h2:'打造真正<br><span class="grad-text">好用的 AI 工具</span>',
+    about_p1:'Xiza 是一個專注於 AI 助手產品的團隊。我們相信，好的 AI 工具應該真正融入工作流，而不是成為額外的負擔。Xitto 是我們對這個信念的實踐。',
+    about_p2:'如有問題或合作需求，歡迎透過 Line 官方帳號聯繫我們。',
+    about_line:'加入 Line 官方帳號',
+    founder_title:'創辦人 / 技術長',
+    founder_bio:'清華大學資訊工程，10+ 年 Java 企業架構與 AI 系統整合。曾任職於國泰人壽、全家便利商店、廣達電腦、蔚來汽車等。',
+    faq_h2:'常見問題',
+    faq_q1:'Xitto 完全免費嗎？', faq_a1:'是的，Xitto 桌面應用完全免費下載與使用。AI 回覆需要連接你自己的 AI 服務（需自行設定 API Key 或使用預設 Agent）。',
+    faq_q2:'我的對話和文件資料安全嗎？', faq_a2:'對話記錄儲存在本機，不會上傳至第三方伺服器。記憶系統的資料也完全儲存在本地，你可以隨時查看或清除。',
+    faq_q3:'支援哪些 AI 模型？', faq_a3:'Xitto 透過 Agent 系統支援多種 AI 模型，包括 Claude、GPT、Gemini 等主流大型語言模型。可在設定中配置你偏好的模型與 API Key。',
+    faq_q4:'如何更新到最新版本？', faq_a4:'直接到下載頁面下載最新版本的 exe 檔案覆蓋即可，設定和對話紀錄不會受影響。',
+    footer_tagline:'打造真正好用的 AI 工具', footer_privacy:'隱私政策', footer_terms:'服務條款',
+    footer_copy:'© 2025 Xiza AI. 保留所有權利。'
+  },
+  'zh-CN': {
+    nav_feat:'功能', nav_dl:'下载', nav_about:'关于', nav_cta:'下载 Xitto',
+    hero_badge:'免费 · 开箱即用',
+    hero_h1:'AI 对话，<br><span class="grad-text">从这里进化</span>',
+    hero_desc:'Xitto 是一款免费桌面 AI 聊天助手，支持多 Agent、文档智能编辑与个性化记忆，让 AI 真正成为你的工作伙伴。',
+    dl_btn_win:'下载 Windows 版', hero_btn_explore:'探索功能',
+    mock_tab_resp:'回应', mock_conv1:'文档重构计划', mock_conv2:'周报草稿',
+    mock_conv3:'竞品分析', mock_conv4:'程序调试',
+    mock_user_msg:'把第二段改得更简洁，语气更正式',
+    mock_thinking:'分析文档结构中…',
+    mock_diff_count:'2 处修改', mock_diff_apply:'应用全部',
+    mock_diff_del:'原有冗长的描述性段落，包含不必要的背景说明。',
+    mock_diff_ins:'精简后的核心论述，直接切入重点。',
+    feat_h2:'一个助手，<span class="grad-text">全面升级</span>你的工作流',
+    feat_sub:'从日常对话到复杂的文档编辑，Xitto 让每一步都更智能。',
+    feat1_title:'多 Agent 角色', feat1_desc:'每个 Agent 有独特的专长与个性，从创意写作到代码调试，选对伙伴事半功倍。',
+    feat2_title:'文档 Diff 编辑', feat2_desc:'自然语言描述修改需求，AI 自动定位段落并展示字符级差异对比，确认后一键应用。',
+    feat3_title:'选文改写', feat3_desc:'选取任意段落，点击预设或自定义描述，AI 改写后显示前后对比，支持逐一审阅。',
+    feat4_title:'个性化记忆', feat4_desc:'Xitto 自动从每次对话中学习你的偏好与习惯，下次不必再重复说明。',
+    feat5_title:'工作目录集成', feat5_desc:'直接在对话中浏览、上传、预览本地文件，把文件内容带入 AI 对话，无需复制粘贴。',
+    feat6_title:'思考过程可视化', feat6_desc:'启用扩展思考模式，看见 AI 一步步的推理过程，让决策更透明、更有说服力。',
+    sp1_label:'智能文档编辑',
+    sp1_h2:'用说的，<br><span class="grad-text">直接改文档</span>',
+    sp1_desc:'不再复制粘贴，不再手动对比。告诉 Xitto 你想怎么改，它会找到对应段落、展示修改前后的差异，你只需要按一个确认。',
+    sp1_li1:'自然语言描述修改需求', sp1_li2:'Inline diff 高亮：红色删除 / 绿色新增', sp1_li3:'逐一审阅或一键应用全部',
+    sv1_title:'draft.md — 整体修改', sv_changes:'3 处修改',
+    sv_discard:'放弃', sv_review:'逐一审阅', sv_apply:'应用全部',
+    sv_del1:'冗长的原始段落文字，包含许多不必要的说明。', sv_ins1:'精简后的版本，直接表达核心观点。',
+    sv_del2:'另一处需要改写的段落内容。', sv_ins2:'更清晰、更具说服力的改写版本。',
+    sp2_label:'个性化记忆系统',
+    sp2_h2:'越聊越懂你，<br><span class="grad-text">记忆成长</span>',
+    sp2_desc:'Xitto 在每次对话后自动学习你的习惯、偏好与需求，分类存储为可查看、可修改的记忆卡片。',
+    sp2_li1:'自动分类：基本资料、学习记录、偏好、备忘', sp2_li2:'记忆面板随时查看与手动编辑', sp2_li3:'完整清除，保护隐私',
+    sv2_title:'🧠 我的记忆', mem_profile:'基本资料', mem_p1:'工程师，偏好简洁的技术说明',
+    mem_p2:'习惯用简体中文回复', mem_prefs:'习惯偏好',
+    mem_pr1:'回复尽量精简，避免冗长说明', mem_pr2:'遇到程序问题优先给示例',
+    mem_recent:'最近学习', mem_r1:'正在研究 AI Agent 架构设计',
+    dl_badge:'免费下载', dl_h2:'立即开始使用 Xitto',
+    dl_sub:'免安装、免设置、开箱即用。Windows 版本现已发布。',
+    dl_btn_win_sub:'.exe · 免安装，开箱即用', dl_mac_title:'Mac 版', dl_mac_sub:'即将推出',
+    about_label:'关于 Xiza',
+    about_h2:'打造真正<br><span class="grad-text">好用的 AI 工具</span>',
+    about_p1:'Xiza 是一个专注于 AI 助手产品的团队。我们相信，好的 AI 工具应该真正融入工作流，而不是成为额外的负担。Xitto 是我们对这个信念的实践。',
+    about_p2:'如有问题或合作需求，欢迎通过 Line 官方账号联系我们。',
+    about_line:'加入 Line 官方账号',
+    founder_title:'创始人 / 技术长',
+    founder_bio:'清华大学计算机工程，10+ 年 Java 企业架构与 AI 系统集成。曾任职于国泰人寿、全家便利商店、广达电脑、蔚来汽车等。',
+    faq_h2:'常见问题',
+    faq_q1:'Xitto 完全免费吗？', faq_a1:'是的，Xitto 桌面应用完全免费下载与使用。AI 回复需要连接你自己的 AI 服务（需自行配置 API Key 或使用默认 Agent）。',
+    faq_q2:'我的对话和文件数据安全吗？', faq_a2:'对话记录存储在本地，不会上传至第三方服务器。记忆系统的数据也完全存储在本地，你可以随时查看或清除。',
+    faq_q3:'支持哪些 AI 模型？', faq_a3:'Xitto 通过 Agent 系统支持多种 AI 模型，包括 Claude、GPT、Gemini 等主流大型语言模型。可在设置中配置你偏好的模型与 API Key。',
+    faq_q4:'如何更新到最新版本？', faq_a4:'直接到下载页面下载最新版本的 exe 文件覆盖即可，设置和对话记录不会受影响。',
+    footer_tagline:'打造真正好用的 AI 工具', footer_privacy:'隐私政策', footer_terms:'服务条款',
+    footer_copy:'© 2025 Xiza AI. 保留所有权利。'
+  }
+};
+
+function detectLang() {
+  const stored = localStorage.getItem('xiza-lang');
+  if (stored && T[stored]) return stored;
+  const nav = (navigator.language || '').toLowerCase();
+  if (nav === 'zh-tw' || nav === 'zh-hant' || nav.startsWith('zh-hant')) return 'zh-TW';
+  if (nav.startsWith('zh')) return 'zh-CN';
+  return 'en';
+}
+
+function applyLang(lang) {
+  const d = T[lang] || T.en;
+  document.documentElement.lang = lang === 'zh-CN' ? 'zh-Hans' : lang === 'zh-TW' ? 'zh-Hant' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (d[key] !== undefined) el.textContent = d[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (d[key] !== undefined) el.innerHTML = d[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  localStorage.setItem('xiza-lang', lang);
+}
+
+const currentLang = detectLang();
+applyLang(currentLang);
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
 </script>
+
 <script>
-    // JavaScript for mobile navigation toggle
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+/* ---- GitHub API ---- */
+(function() {
+  fetch('https://api.github.com/repos/ishoplus/xitto-dist/releases/latest')
+    .then(r => r.json())
+    .then(data => {
+      const exe = data.assets && data.assets.find(a => a.name.endsWith('.exe'));
+      const url = exe ? exe.browser_download_url : 'https://github.com/ishoplus/xitto-dist/releases/latest';
+      ['dlHeroWin','dlMainWin'].forEach(id => { const el = document.getElementById(id); if (el) el.href = url; });
+      if (data.tag_name) {
+        const date = data.published_at ? new Date(data.published_at).toLocaleDateString() : '';
+        const text = `v${data.tag_name.replace(/^v/,'')}${date ? ' · ' + date : ''}`;
+        ['heroVersion','dlVersion'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = text; });
+      }
+    }).catch(() => { const el = document.getElementById('dlVersion'); if (el) el.textContent = ''; });
+})();
 
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
+/* ---- Nav scroll ---- */
+(function() {
+  const nav = document.getElementById('navHeader');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+})();
 
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-        });
+/* ---- Mobile burger ---- */
+(function() {
+  const burger = document.getElementById('navBurger');
+  const links  = document.getElementById('navLinks');
+  burger.addEventListener('click', () => { links.classList.toggle('open'); burger.classList.toggle('open'); });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); burger.classList.remove('open'); }));
+})();
 
-        // Burger Animation
-        burger.classList.toggle('toggle');
-    });
-
-    // Close nav when clicking a link (for mobile)
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('nav-active')) {
-                nav.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-                navLinks.forEach(item => item.style.animation = '');
-            }
-        });
-    });
-
-    // Simple FAQ toggle
-    document.querySelectorAll('.faq-item h3').forEach(item => {
-        item.addEventListener('click', () => {
-            item.nextElementSibling.classList.toggle('active'); // Toggles a class on the <p> tag
-            item.classList.toggle('active'); // Toggles active class on h3 for icon change
-        });
-    });
-
-    // Optional: JavaScript to handle dropdown click on mobile
-    const dropdown = document.querySelector('.nav-links .dropdown > a');
-    if (dropdown) {
-        dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) { // Only on mobile
-                e.preventDefault(); // Prevent default link behavior
-                const dropdownContent = dropdown.nextElementSibling;
-                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-            }
-        });
-    }
+/* ---- FAQ accordion ---- */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>
