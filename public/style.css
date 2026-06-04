@@ -504,6 +504,15 @@ img { max-width: 100%; display: block; }
     display: inline-flex; gap: 14px; flex-wrap: wrap;
     justify-content: center; margin-bottom: 18px;
 }
+.dl-win-group {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.dl-alt-link {
+    font-size: 0.8em; color: var(--text-3);
+    text-decoration: underline; text-underline-offset: 3px;
+    transition: color var(--transition);
+}
+.dl-alt-link:hover { color: var(--accent); }
 .btn-lg {
     display: flex; align-items: center; gap: 14px;
     padding: 16px 28px; border-radius: var(--radius);
