@@ -668,8 +668,8 @@ img { max-width: 100%; display: block; }
     .hero { padding: 80px 0 60px; }
     .hero-h1 { font-size: 2.4em; }
     .features-grid { grid-template-columns: 1fr 1fr; }
-    .mockup-file { display: none; }
-    .mockup-sidebar { width: 110px; }
+    .mockup-sidebar { width: 90px; }
+    .mockup-file { width: 90px; }
     .dl-title { font-size: 2.2em; }
     .dl-btns { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
     .btn-lg { width: 100%; }
@@ -680,6 +680,7 @@ img { max-width: 100%; display: block; }
     .hero-h1 { font-size: 2em; }
     .features-grid { grid-template-columns: 1fr; }
     .section-header h2 { font-size: 2em; }
-    .mockup-sidebar { display: none; }
+    .mockup-sidebar { width: 65px; }
+    .mockup-file { width: 65px; }
     .spotlight-text h2 { font-size: 1.9em; }
 }
