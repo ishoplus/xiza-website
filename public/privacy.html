@@ -5,131 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>隱私權政策 | Xitto & Xiza</title>
     <meta name="description" content="Xitto App 及 Xiza AI Agent Services 的隱私權政策。">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="gstatic" crossorigin href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <a href="index.html">Xiza</a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html#about">關於我們</a></li>
-            <li><a href="index.html#services">核心服務</a></li>
-            <li><a href="index.html#contact">立即諮詢</a></li>
+<header class="nav-header scrolled">
+    <nav class="nav-inner">
+        <a class="nav-logo" href="index.html">Xiza</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#download">Download</a></li>
+            <li><a href="index.html#about">About</a></li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 </header>
 
-<main class="policy-page-content">
-    <div class="container">
-        <h1>隱私權政策</h1>
-        <p class="last-updated">最後更新日期：2025年6月9日</p>
-        <p>本隱私權政策適用於 <strong>Xitto</strong> 行動應用程式（iOS）及 <strong>Xiza AI Agent Services</strong> 網站服務（以下合稱「本服務」），由 Yu Hsiang Wang 提供及營運。</p>
+<main class="policy-page">
+    <div class="container policy-container">
+        <h1 class="policy-title">隱私權政策</h1>
+        <p class="policy-meta">最後更新日期：2025年6月9日</p>
+        <p class="policy-intro">本隱私權政策適用於 <strong>Xitto</strong> 行動應用程式（iOS）及 <strong>Xiza AI Agent Services</strong> 網站服務（以下合稱「本服務」），由 Yu Hsiang Wang 提供及營運。</p>
 
-        <h2>1. 我們收集的資料</h2>
-        <p>在您註冊帳號時，我們會收集以下個人資料：</p>
-        <ul>
-            <li><strong>電子郵件地址</strong>：用於帳號驗證與登入。</li>
-            <li><strong>使用者名稱</strong>：用於識別您的帳號。</li>
-        </ul>
-        <p>除上述資料外，Xitto App 中的對話內容、AI 記憶、習慣記錄、飲食記錄等個人資料，<strong>僅儲存於您的裝置本機</strong>，不會上傳至伺服器。</p>
+        <section class="policy-section">
+            <h2>1. 我們收集的資料</h2>
+            <p>在您註冊帳號時，我們會收集以下個人資料：</p>
+            <ul>
+                <li><strong>電子郵件地址</strong>：用於帳號驗證與登入。</li>
+                <li><strong>使用者名稱</strong>：用於識別您的帳號。</li>
+            </ul>
+            <p>除上述資料外，Xitto App 中的對話內容、AI 記憶、習慣記錄、飲食記錄等個人資料，<strong>僅儲存於您的裝置本機</strong>，不會上傳至伺服器。</p>
+        </section>
 
-        <h2>2. 資料使用目的</h2>
-        <p>我們收集的資料僅用於以下目的：</p>
-        <ul>
-            <li>建立並管理您的帳號。</li>
-            <li>提供跨裝置的帳號同步功能。</li>
-            <li>提供訂閱方案（透過 Apple App Store 內購）。</li>
-            <li>回應您的技術支援請求。</li>
-        </ul>
+        <section class="policy-section">
+            <h2>2. 資料使用目的</h2>
+            <p>我們收集的資料僅用於以下目的：</p>
+            <ul>
+                <li>建立並管理您的帳號。</li>
+                <li>提供跨裝置的帳號同步功能。</li>
+                <li>提供訂閱方案（透過 Apple App Store 內購）。</li>
+                <li>回應您的技術支援請求。</li>
+            </ul>
+        </section>
 
-        <h2>3. 資料分享</h2>
-        <p>我們不會將您的個人資料出售、出租或以商業方式分享給第三方。</p>
-        <p>以下情況除外：</p>
-        <ul>
-            <li><strong>RevenueCat</strong>：用於處理應用程式內購與訂閱驗證，僅共享必要的購買交易資料。</li>
-            <li><strong>Apple</strong>：透過 Apple App Store 進行的付款由 Apple 直接處理，適用 Apple 的隱私權政策。</li>
-            <li>法律要求：如法律程序或政府機關有合法要求時。</li>
-        </ul>
+        <section class="policy-section">
+            <h2>3. 資料分享</h2>
+            <p>我們不會將您的個人資料出售、出租或以商業方式分享給第三方。</p>
+            <p>以下情況除外：</p>
+            <ul>
+                <li><strong>RevenueCat</strong>：用於處理應用程式內購與訂閱驗證，僅共享必要的購買交易資料。</li>
+                <li><strong>Apple</strong>：透過 Apple App Store 進行的付款由 Apple 直接處理，適用 Apple 的隱私權政策。</li>
+                <li>法律要求：如法律程序或政府機關有合法要求時。</li>
+            </ul>
+        </section>
 
-        <h2>4. AI 功能與資料處理</h2>
-        <p>Xitto App 支援多種 AI 後端：</p>
-        <ul>
-            <li><strong>本機模型</strong>：所有對話在您的裝置上處理，不傳送至任何伺服器。</li>
-            <li><strong>雲端模型</strong>：如您選擇使用雲端 AI（如 OpenAI、MiniMax 等），對話內容將依據您所選服務商的隱私政策處理。</li>
-            <li><strong>Pro 方案</strong>：透過我們的代理伺服器轉發 AI 請求，不儲存對話內容。</li>
-        </ul>
+        <section class="policy-section">
+            <h2>4. AI 功能與資料處理</h2>
+            <p>Xitto App 支援多種 AI 後端：</p>
+            <ul>
+                <li><strong>本機模型</strong>：所有對話在您的裝置上處理，不傳送至任何伺服器。</li>
+                <li><strong>雲端模型</strong>：如您選擇使用雲端 AI（如 OpenAI、MiniMax 等），對話內容將依據您所選服務商的隱私政策處理。</li>
+                <li><strong>Pro 方案</strong>：透過我們的代理伺服器轉發 AI 請求，不儲存對話內容。</li>
+            </ul>
+        </section>
 
-        <h2>5. 資料保存</h2>
-        <p>帳號資料保存至您主動刪除帳號為止。您可以隨時在 App 設定中刪除帳號，所有伺服器端資料將於刪除後立即清除。</p>
+        <section class="policy-section">
+            <h2>5. 資料保存</h2>
+            <p>帳號資料保存至您主動刪除帳號為止。您可以隨時在 App 設定中刪除帳號，所有伺服器端資料將於刪除後立即清除。</p>
+        </section>
 
-        <h2>6. 您的權利</h2>
-        <p>您有權：</p>
-        <ul>
-            <li>存取您的個人資料。</li>
-            <li>更正不正確的資料。</li>
-            <li>刪除您的帳號及相關資料。</li>
-            <li>撤回同意（如適用）。</li>
-        </ul>
-        <p>如需行使上述權利，請透過 <a href="mailto:ishoplus@gmail.com">ishoplus@gmail.com</a> 聯繫我們。</p>
+        <section class="policy-section">
+            <h2>6. 您的權利</h2>
+            <p>您有權：</p>
+            <ul>
+                <li>存取您的個人資料。</li>
+                <li>更正不正確的資料。</li>
+                <li>刪除您的帳號及相關資料。</li>
+                <li>撤回同意（如適用）。</li>
+            </ul>
+            <p>如需行使上述權利，請透過 <a href="mailto:ishoplus@gmail.com">ishoplus@gmail.com</a> 聯繫我們。</p>
+        </section>
 
-        <h2>7. 兒童隱私</h2>
-        <p>本服務不針對 13 歲以下兒童，我們不會故意收集兒童的個人資料。</p>
+        <section class="policy-section">
+            <h2>7. 兒童隱私</h2>
+            <p>本服務不針對 13 歲以下兒童，我們不會故意收集兒童的個人資料。</p>
+        </section>
 
-        <h2>8. 政策變更</h2>
-        <p>本政策如有重大變更，將在本頁面公告，並更新「最後更新日期」。建議您定期檢閱本頁面。</p>
+        <section class="policy-section">
+            <h2>8. 政策變更</h2>
+            <p>本政策如有重大變更，將在本頁面公告，並更新「最後更新日期」。建議您定期檢閱本頁面。</p>
+        </section>
 
-        <h2>9. 聯絡我們</h2>
-        <p>如對本隱私權政策有任何疑問，請透過以下方式聯繫：</p>
-        <ul>
-            <li>Email：<a href="mailto:ishoplus@gmail.com">ishoplus@gmail.com</a></li>
-        </ul>
+        <section class="policy-section">
+            <h2>9. 聯絡我們</h2>
+            <p>如對本隱私權政策有任何疑問，請透過以下方式聯繫：</p>
+            <ul>
+                <li>Email：<a href="mailto:ishoplus@gmail.com">ishoplus@gmail.com</a></li>
+            </ul>
+        </section>
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Yu Hsiang Wang. All rights reserved.</p>
-        <ul class="footer-links">
-            <li><a href="privacy.html">隱私權政策</a></li>
-            <li><a href="terms.html">服務條款</a></li>
-        </ul>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">Xiza</span>
+            <p>Building truly useful AI tools</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#download">Download</a>
+            <a href="index.html#about">About</a>
+            <a href="privacy.html">隱私權政策</a>
+            <a href="terms.html">服務條款</a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <p>© 2025 Xiza AI. All rights reserved.</p>
     </div>
 </footer>
 
 <script>
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+    const burger = document.getElementById('navBurger');
+    const navLinks = document.getElementById('navLinks');
     if (burger) {
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('nav-active');
-            navLinks.forEach((link, index) => {
-                link.style.animation = link.style.animation
-                    ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            });
-            burger.classList.toggle('toggle');
-        });
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (nav.classList.contains('nav-active')) {
-                    nav.classList.remove('nav-active');
-                    burger.classList.remove('toggle');
-                    navLinks.forEach(item => item.style.animation = '');
-                }
-            });
-        });
+        burger.addEventListener('click', () => navLinks.classList.toggle('open'));
     }
 </script>
 </body>
