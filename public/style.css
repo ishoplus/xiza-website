@@ -695,6 +695,63 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================
+   PHONE SCREENSHOTS · COMPANY INFO
+   ============================================ */
+.phone-frame {
+    background: #000;
+    border-radius: 36px;
+    padding: 8px;
+    border: 1px solid var(--border-2);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.3);
+}
+.phone-frame img { border-radius: 28px; width: 100%; height: auto; }
+.hero-container { width: 100%; }
+.hero-phones { flex: 1; min-width: 0; position: relative; height: 560px; }
+.hero-phones .phone-frame { position: absolute; width: 250px; }
+.hero-phones .phone-front { right: 12%; top: 0; z-index: 2; }
+.hero-phones .phone-back { right: 46%; top: 50px; opacity: 0.55; transform: rotate(-6deg); }
+.phone-solo { width: 270px; margin: 0 auto; }
+.dl-icon { width: 88px; height: 88px; border-radius: 20px; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+.about-contact { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.about-contact .about-line-btn { margin-top: 0; }
+.about-mail-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(47,129,247,0.12);
+    border: 1px solid rgba(47,129,247,0.35);
+    color: var(--accent-2); font-size: 0.9em; font-weight: 700;
+    padding: 10px 20px; border-radius: 8px;
+    transition: background var(--transition), transform var(--transition);
+}
+.about-mail-btn:hover { background: rgba(47,129,247,0.2); transform: translateY(-1px); }
+.company-card {
+    margin-top: 16px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+.company-card h4 { font-size: 1em; font-weight: 700; color: var(--text-1); margin-bottom: 12px; }
+.company-info { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 0.83em; }
+.company-info dt { color: var(--text-3); white-space: nowrap; }
+.company-info dd { color: var(--text-2); overflow-wrap: anywhere; }
+.company-info a { color: var(--accent-2); }
+.co-sub { color: var(--text-3); }
+
+@media (max-width: 1024px) {
+    .hero-phones { width: 100%; max-width: 480px; height: 520px; margin: 0 auto; }
+    .hero-phones .phone-front { right: 8%; }
+    .hero-phones .phone-back { right: auto; left: 8%; }
+}
+@media (max-width: 480px) {
+    .hero-phones { height: 440px; }
+    .hero-phones .phone-frame { width: 200px; }
+    .hero-phones .phone-front { right: 0; }
+    .hero-phones .phone-back { left: 0; }
+    .phone-solo { width: 230px; }
+}
+
+/* ============================================
    POLICY PAGES (privacy, terms)
    ============================================ */
 .policy-page {
