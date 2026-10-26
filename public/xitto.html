@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xitto — Your AI Assistant for Everyday Life | Xiza</title>
+    <meta name="description" content="Xitto is a mobile AI assistant for everyday life by Xiza, a Taiwan-based startup. Chat, a Today dashboard, friends with an AI secretary, life-tracking mini-apps and scheduled tasks.">
+    <link rel="icon" href="img/app-icon.jpg">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Xiza",
+      "legalName": "Xiza Co., Ltd.",
+      "alternateName": "係咱股份有限公司",
+      "url": "https://www.xi-za.com",
+      "logo": "https://www.xi-za.com/img/app-icon.jpg",
+      "email": "support@xi-za.com",
+      "foundingDate": "2025-06-30",
+      "taxID": "60645037",
+      "address": { "@type": "PostalAddress", "streetAddress": "8F., No. 106, Sec. 1, Zhonghua Rd., Wanhua Dist., Taipei City 108, Taiwan", "addressCountry": "TW" },
+      "founder": { "@type": "Person", "name": "Sho Wang" }
+    }
+    </script>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav-header" id="navHeader">
+    <nav class="nav-inner">
+        <a class="nav-logo" href="#">Xiza</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features" data-i18n="nav_feat">Features</a></li>
+            <li><a href="#download" data-i18n="nav_dl">Download</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="lang-switcher" id="langSwitcher">
+            <button data-lang="en" class="lang-btn active">EN</button>
+            <button data-lang="zh-TW" class="lang-btn">繁</button>
+            <button data-lang="zh-CN" class="lang-btn">简</button>
+        </div>
+        <a href="#download" class="nav-cta" data-i18n="nav_cta">Get Xitto</a>
+        <button class="nav-burger" id="navBurger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="container hero-container">
+        <div class="hero-text">
+            <span class="hero-badge" data-i18n="hero_badge">Now on the App Store · Free</span>
+            <h1 class="hero-h1" data-i18n-html="hero_h1">Your AI Assistant<br>for <span class="grad-text">Everyday Life</span></h1>
+            <p class="hero-desc" data-i18n="hero_desc">Xitto brings chat, a personal Today dashboard, friends with an AI secretary, life-tracking mini-apps and scheduled tasks together in one app on your phone.</p>
+            <div class="hero-btns">
+                <a href="https://apps.apple.com/tw/app/xitto/id6776693640" target="_blank" rel="noopener" class="btn-primary">
+                    <i class="fab fa-apple"></i>
+                    <span data-i18n="dl_btn_ios">Download on the App Store</span>
+                </a>
+                <a href="#features" class="btn-ghost">
+                    <span data-i18n="hero_btn_explore">Explore Features</span> <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-phones" aria-hidden="true">
+            <div class="phone-frame phone-back"><img src="img/shot-chat.jpg" alt=""></div>
+            <div class="phone-frame phone-front"><img src="img/shot-today.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section class="features-section" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2 data-i18n-html="feat_h2">One App for <span class="grad-text">Your Whole Day</span></h2>
+            <p class="section-sub" data-i18n="feat_sub">From a quick question to planning a trip, Xitto handles the details so you can focus on living.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#58a9ff"><i class="fas fa-comments"></i></div>
+                <h3 data-i18n="feat1_title">Chat</h3>
+                <p data-i18n="feat1_desc">Talk to Xitto with the AI model you prefer. Get answers, draft messages and brainstorm, with personal memory so you never repeat yourself.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#ffa657"><i class="fas fa-sun"></i></div>
+                <h3 data-i18n="feat2_title">Today Dashboard</h3>
+                <p data-i18n="feat2_desc">Stocks, weather, sports and news on one page. Pin the cards you care about, or just ask the AI to add one for you.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#d2a8ff"><i class="fas fa-user-group"></i></div>
+                <h3 data-i18n="feat3_title">Friends &amp; AI Secretary</h3>
+                <p data-i18n="feat3_desc">Message friends peer-to-peer over Nostr. Turn on AI secretary mode and Xitto suggests replies so nothing important slips by.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#7ee787"><i class="fas fa-heart-pulse"></i></div>
+                <h3 data-i18n="feat4_title">Life Tracking</h3>
+                <p data-i18n="feat4_desc">Snap a meal for nutrition analysis, track habits, plan your budget, keep a shopping list and log your travels.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#ff7b72"><i class="fas fa-clock"></i></div>
+                <h3 data-i18n="feat5_title">Scheduled Tasks</h3>
+                <p data-i18n="feat5_desc">Set recurring tasks and Xitto runs them at the right time, even in the background.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon" style="--c:#79c0ff"><i class="fas fa-shield-halved"></i></div>
+                <h3 data-i18n="feat6_title">Privacy First</h3>
+                <p data-i18n="feat6_desc">Conversations stay on your device. Xitto never uploads your personal data without your permission.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SPOTLIGHT 1 ========== -->
+<section class="spotlight-section" id="spotlight1">
+    <div class="container spotlight-inner">
+        <div class="spotlight-text">
+            <span class="spotlight-label" data-i18n="sp1_label">Today Dashboard</span>
+            <h2 data-i18n-html="sp1_h2">Everything That Matters,<br><span class="grad-text">At a Glance</span></h2>
+            <p data-i18n="sp1_desc">Open Xitto and your day is already laid out: the weather, your stocks, last night's match and the news you follow.</p>
+            <ul class="spotlight-list">
+                <li><i class="fas fa-check"></i><span data-i18n="sp1_li1">Cards for stocks, sports, weather and news</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp1_li2">Add a card by asking: "Add a TSMC card for me"</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp1_li3">Fully customizable to what you care about</span></li>
+            </ul>
+        </div>
+        <div class="spotlight-visual">
+            <div class="phone-frame phone-solo"><img src="img/shot-today.jpg" alt="Xitto Today dashboard"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SPOTLIGHT 2 ========== -->
+<section class="spotlight-section spotlight-reverse" id="spotlight2">
+    <div class="container spotlight-inner">
+        <div class="spotlight-text">
+            <span class="spotlight-label" data-i18n="sp2_label">Mini-Apps</span>
+            <h2 data-i18n-html="sp2_h2">Small Tools,<br><span class="grad-text">Big Help</span></h2>
+            <p data-i18n="sp2_desc">Lightweight apps built into Xitto, each with AI where it helps most.</p>
+            <ul class="spotlight-list">
+                <li><i class="fas fa-check"></i><span data-i18n="sp2_li1">Budget planning, habit check-ins, shopping lists, countdowns</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp2_li2">Food log: snap a photo, AI estimates calories and nutrition</span></li>
+                <li><i class="fas fa-check"></i><span data-i18n="sp2_li3">Travel journal: photos + location + AI-written notes</span></li>
+            </ul>
+        </div>
+        <div class="spotlight-visual">
+            <div class="phone-frame phone-solo"><img src="img/shot-apps.jpg" alt="Xitto mini-apps"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== DOWNLOAD ========== -->
+<section class="download-section" id="download">
+    <div class="dl-orb" aria-hidden="true"></div>
+    <div class="container dl-container">
+        <img class="dl-icon" src="img/app-icon.jpg" alt="Xitto app icon">
+        <span class="dl-badge" data-i18n="dl_badge">Free Download</span>
+        <h2 class="dl-title" data-i18n="dl_h2">Start Using Xitto Today</h2>
+        <p class="dl-sub" data-i18n="dl_sub">Available now for iPhone (iOS 16.4 or later).</p>
+        <div class="dl-btns">
+            <a href="https://apps.apple.com/tw/app/xitto/id6776693640" target="_blank" rel="noopener" class="btn-primary btn-lg">
+                <i class="fab fa-apple"></i>
+                <div>
+                    <span class="btn-main-text" data-i18n="dl_btn_ios">Download on the App Store</span>
+                    <span class="btn-sub-text" data-i18n="dl_btn_ios_sub">iPhone · Free</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about-section" id="about">
+    <div class="container about-inner">
+        <div class="about-text">
+            <span class="about-label" data-i18n="about_label">About Xiza</span>
+            <h2 data-i18n-html="about_h2">Building Truly<br><span class="grad-text">Useful AI Tools</span></h2>
+            <p data-i18n="about_p1">Xiza is a startup founded in Taiwan in 2025. We build Xitto, an AI assistant that fits into everyday life instead of adding to your cognitive load.</p>
+            <p data-i18n="about_p2">Have questions or partnership inquiries? Email us or reach out through our Line official account.</p>
+            <div class="about-contact">
+                <a href="mailto:support@xi-za.com" class="about-mail-btn"><i class="fas fa-envelope"></i> support@xi-za.com</a>
+                <a href="https://line.me/ti/p/@868fegki" target="_blank" rel="noopener" class="about-line-btn">
+                    <i class="fab fa-line"></i> <span data-i18n="about_line">Join Our Line Account</span>
+                </a>
+            </div>
+        </div>
+        <div class="about-founder">
+            <div class="founder-card">
+                <div class="founder-avatar">SW</div>
+                <div class="founder-info">
+                    <h4>Sho Wang <span class="founder-name-zh">王佑祥</span></h4>
+                    <p class="founder-title" data-i18n="founder_title">Founder / CTO</p>
+                    <p class="founder-bio" data-i18n="founder_bio">NTHU Computer Science. 10+ years of Java enterprise architecture and AI system integration across finance, retail, manufacturing, semiconductor, and new energy vehicle industries.</p>
+                </div>
+            </div>
+            <div class="company-card">
+                <h4 data-i18n="co_title">Company Information</h4>
+                <dl class="company-info">
+                    <dt data-i18n="co_name">Legal name</dt>
+                    <dd>係咱股份有限公司<br><span class="co-sub">Xiza Co., Ltd.</span></dd>
+                    <dt data-i18n="co_taxid">Business ID</dt>
+                    <dd><a href="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do?banNo=60645037" target="_blank" rel="noopener">60645037</a></dd>
+                    <dt data-i18n="co_rep">Representative</dt>
+                    <dd>王佑祥 (Yu-Hsiang Wang)</dd>
+                    <dt data-i18n="co_founded">Founded</dt>
+                    <dd data-i18n="co_founded_v">June 30, 2025 · Taipei, Taiwan</dd>
+                    <dt data-i18n="co_addr">Address</dt>
+                    <dd>108 臺北市萬華區中華路一段 106 號 8 樓<br><span class="co-sub">8F., No. 106, Sec. 1, Zhonghua Rd., Wanhua Dist., Taipei City 108, Taiwan</span></dd>
+                    <dt data-i18n="co_email">Email</dt>
+                    <dd><a href="mailto:support@xi-za.com">support@xi-za.com</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <h2 data-i18n="faq_h2">FAQ</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q1">Is Xitto free?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a1">Yes. Xitto is free to download, and signing in to Xitto Cloud gives you a free AI usage allowance. You can also connect your own API key.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q2">Is my data secure?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a2">Conversations and memory are stored on your device. Xitto does not upload personal data without your permission, and you can view or clear your memory at any time.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q3">Which AI models are supported?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a3">Xitto Cloud works out of the box with no setup. You can also bring your own API key from OpenAI, Gemini, DeepSeek, MiniMax or any compatible provider.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q"><span data-i18n="faq_q4">Is there an Android version?</span><i class="fas fa-plus faq-icon"></i></button>
+                <div class="faq-a" data-i18n="faq_a4">Xitto is available on iPhone today. Android is on our roadmap. Join our Line account to hear when it launches.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">Xiza</span>
+            <p data-i18n="footer_tagline">Building truly useful AI tools</p>
+        </div>
+        <div class="footer-links">
+            <a href="#features" data-i18n="nav_feat">Features</a>
+            <a href="#download" data-i18n="nav_dl">Download</a>
+            <a href="#about" data-i18n="nav_about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+            <a href="terms.html" data-i18n="footer_terms">Terms</a>
+            <a href="https://line.me/ti/p/@868fegki" target="_blank" rel="noopener"><i class="fab fa-line"></i></a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <p>© 2025–2026 Xiza Co., Ltd. (係咱股份有限公司) · <span data-i18n="footer_taxid">Business ID</span> 60645037</p>
+    </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+/* ---- i18n ---- */
+const T = {
+  en: {
+    nav_feat:'Features', nav_dl:'Download', nav_about:'About', nav_cta:'Get Xitto',
+    hero_badge:'Now on the App Store · Free',
+    hero_h1:'Your AI Assistant<br>for <span class="grad-text">Everyday Life</span>',
+    hero_desc:'Xitto brings chat, a personal Today dashboard, friends with an AI secretary, life-tracking mini-apps and scheduled tasks together in one app on your phone.',
+    dl_btn_ios:'Download on the App Store', hero_btn_explore:'Explore Features',
+    feat_h2:'One App for <span class="grad-text">Your Whole Day</span>',
+    feat_sub:'From a quick question to planning a trip, Xitto handles the details so you can focus on living.',
+    feat1_title:'Chat', feat1_desc:'Talk to Xitto with the AI model you prefer. Get answers, draft messages and brainstorm, with personal memory so you never repeat yourself.',
+    feat2_title:'Today Dashboard', feat2_desc:'Stocks, weather, sports and news on one page. Pin the cards you care about, or just ask the AI to add one for you.',
+    feat3_title:'Friends & AI Secretary', feat3_desc:'Message friends peer-to-peer over Nostr. Turn on AI secretary mode and Xitto suggests replies so nothing important slips by.',
+    feat4_title:'Life Tracking', feat4_desc:'Snap a meal for nutrition analysis, track habits, plan your budget, keep a shopping list and log your travels.',
+    feat5_title:'Scheduled Tasks', feat5_desc:'Set recurring tasks and Xitto runs them at the right time, even in the background.',
+    feat6_title:'Privacy First', feat6_desc:'Conversations stay on your device. Xitto never uploads your personal data without your permission.',
+    sp1_label:'Today Dashboard',
+    sp1_h2:'Everything That Matters,<br><span class="grad-text">At a Glance</span>',
+    sp1_desc:'Open Xitto and your day is already laid out: the weather, your stocks, last night\'s match and the news you follow.',
+    sp1_li1:'Cards for stocks, sports, weather and news', sp1_li2:'Add a card by asking: "Add a TSMC card for me"', sp1_li3:'Fully customizable to what you care about',
+    sp2_label:'Mini-Apps',
+    sp2_h2:'Small Tools,<br><span class="grad-text">Big Help</span>',
+    sp2_desc:'Lightweight apps built into Xitto, each with AI where it helps most.',
+    sp2_li1:'Budget planning, habit check-ins, shopping lists, countdowns', sp2_li2:'Food log: snap a photo, AI estimates calories and nutrition', sp2_li3:'Travel journal: photos + location + AI-written notes',
+    dl_badge:'Free Download', dl_h2:'Start Using Xitto Today',
+    dl_sub:'Available now for iPhone (iOS 16.4 or later).', dl_btn_ios_sub:'iPhone · Free',
+    about_label:'About Xiza',
+    about_h2:'Building Truly<br><span class="grad-text">Useful AI Tools</span>',
+    about_p1:'Xiza is a startup founded in Taiwan in 2025. We build Xitto, an AI assistant that fits into everyday life instead of adding to your cognitive load.',
+    about_p2:'Have questions or partnership inquiries? Email us or reach out through our Line official account.',
+    about_line:'Join Our Line Account',
+    founder_title:'Founder / CTO',
+    founder_bio:'NTHU Computer Science. 10+ years of Java enterprise architecture and AI system integration across finance, retail, manufacturing, semiconductor, and new energy vehicle industries.',
+    co_title:'Company Information', co_name:'Legal name', co_taxid:'Business ID', co_founded:'Founded', co_founded_v:'June 30, 2025 · Taipei, Taiwan', co_addr:'Address', co_email:'Email', co_rep:'Representative',
+    faq_h2:'FAQ',
+    faq_q1:'Is Xitto free?', faq_a1:'Yes. Xitto is free to download, and signing in to Xitto Cloud gives you a free AI usage allowance. You can also connect your own API key.',
+    faq_q2:'Is my data secure?', faq_a2:'Conversations and memory are stored on your device. Xitto does not upload personal data without your permission, and you can view or clear your memory at any time.',
+    faq_q3:'Which AI models are supported?', faq_a3:'Xitto Cloud works out of the box with no setup. You can also bring your own API key from OpenAI, Gemini, DeepSeek, MiniMax or any compatible provider.',
+    faq_q4:'Is there an Android version?', faq_a4:'Xitto is available on iPhone today. Android is on our roadmap. Join our Line account to hear when it launches.',
+    footer_tagline:'Building truly useful AI tools', footer_privacy:'Privacy', footer_terms:'Terms', footer_taxid:'Business ID'
+  },
+  'zh-TW': {
+    nav_feat:'功能', nav_dl:'下載', nav_about:'關於', nav_cta:'取得 Xitto',
+    hero_badge:'App Store 已上架 · 免費',
+    hero_h1:'陪你過日子的<br><span class="grad-text">AI 助理</span>',
+    hero_desc:'Xitto 把對話、個人化今日資訊、好友與 AI 秘書、生活小工具和定時任務整合在同一個手機 App 裡。',
+    dl_btn_ios:'在 App Store 下載', hero_btn_explore:'探索功能',
+    feat_h2:'一個 App，<span class="grad-text">打理你的一天</span>',
+    feat_sub:'從隨口一問到規劃旅程，細節交給 Xitto，你專心生活。',
+    feat1_title:'對話', feat1_desc:'用你喜歡的 AI 模型和 Xitto 聊天：問問題、擬訊息、腦力激盪。它會記住你的偏好，不必每次重講。',
+    feat2_title:'今日儀表板', feat2_desc:'股價、天氣、體育賽事和新聞放在同一頁。釘選你關心的卡片，或直接請 AI 幫你加一張。',
+    feat3_title:'好友與 AI 秘書', feat3_desc:'透過 Nostr 和好友點對點傳訊。開啟 AI 秘書模式，Xitto 會幫你擬好回覆，重要訊息不漏接。',
+    feat4_title:'生活追蹤', feat4_desc:'拍照分析飲食營養、習慣打卡、理財規劃、購物清單、旅遊足跡。',
+    feat5_title:'定時任務', feat5_desc:'設定定期任務，Xitto 會在對的時間自動執行，在背景也能運作。',
+    feat6_title:'隱私優先', feat6_desc:'對話保留在你的裝置上。未經你的許可，Xitto 不會上傳個人資料。',
+    sp1_label:'今日儀表板',
+    sp1_h2:'重要的事，<br><span class="grad-text">一眼看完</span>',
+    sp1_desc:'打開 Xitto，今天的天氣、持股、昨晚的比賽和你追的新聞都已經排好了。',
+    sp1_li1:'股市、運動、天氣、新聞卡片', sp1_li2:'用說的加卡片：「幫我加一張台積電卡片」', sp1_li3:'依你的關注完全自訂',
+    sp2_label:'生活小應用',
+    sp2_h2:'小工具，<br><span class="grad-text">大幫手</span>',
+    sp2_desc:'內建在 Xitto 裡的輕量應用，在最需要的地方用上 AI。',
+    sp2_li1:'理財規劃、習慣打卡、購物清單、倒數日', sp2_li2:'飲食記錄：拍照，AI 分析熱量與營養', sp2_li3:'旅遊足跡：照片＋定位＋AI 旅行筆記',
+    dl_badge:'免費下載', dl_h2:'立即開始使用 Xitto',
+    dl_sub:'iPhone 版現已推出（需 iOS 16.4 以上）。', dl_btn_ios_sub:'iPhone · 免費',
+    about_label:'關於 Xiza',
+    about_h2:'打造真正<br><span class="grad-text">好用的 AI 工具</span>',
+    about_p1:'Xiza 是 2025 年在台灣成立的新創公司。我們開發 Xitto：一個融入日常生活、而不是增加負擔的 AI 助理。',
+    about_p2:'如有問題或合作需求，歡迎來信或透過 Line 官方帳號聯繫我們。',
+    about_line:'加入 Line 官方帳號',
+    founder_title:'創辦人 / 技術長',
+    founder_bio:'清華大學資訊工程，10+ 年橫跨金融、零售、製造、半導體、新能源汽車等產業的 Java 企業架構與 AI 系統整合經驗。',
+    co_title:'公司資訊', co_name:'公司名稱', co_taxid:'統一編號', co_founded:'成立', co_founded_v:'2025 年 6 月 30 日 · 臺北市', co_addr:'地址', co_email:'信箱', co_rep:'代表人',
+    faq_h2:'常見問題',
+    faq_q1:'Xitto 免費嗎？', faq_a1:'免費。Xitto 可免費下載，登入 Xitto 雲端即享免費 AI 額度，也可以接自己的 API Key。',
+    faq_q2:'我的資料安全嗎？', faq_a2:'對話和記憶都存在你的裝置上。未經許可，Xitto 不會上傳個人資料，記憶也可以隨時查看或清除。',
+    faq_q3:'支援哪些 AI 模型？', faq_a3:'Xitto 雲端開箱即用，不用設定。也可以接自己的 OpenAI、Gemini、DeepSeek、MiniMax 或其他相容服務的 API Key。',
+    faq_q4:'有 Android 版嗎？', faq_a4:'目前先推出 iPhone 版，Android 版已在規劃中。加入 Line 官方帳號，上線時第一時間通知你。',
+    footer_tagline:'打造真正好用的 AI 工具', footer_privacy:'隱私政策', footer_terms:'服務條款', footer_taxid:'統一編號'
+  },
+  'zh-CN': {
+    nav_feat:'功能', nav_dl:'下载', nav_about:'关于', nav_cta:'获取 Xitto',
+    hero_badge:'App Store 已上架 · 免费',
+    hero_h1:'陪你过日子的<br><span class="grad-text">AI 助理</span>',
+    hero_desc:'Xitto 把对话、个性化今日信息、好友与 AI 秘书、生活小工具和定时任务整合在同一个手机 App 里。',
+    dl_btn_ios:'在 App Store 下载', hero_btn_explore:'探索功能',
+    feat_h2:'一个 App，<span class="grad-text">打理你的一天</span>',
+    feat_sub:'从随口一问到规划旅程，细节交给 Xitto，你专心生活。',
+    feat1_title:'对话', feat1_desc:'用你喜欢的 AI 模型和 Xitto 聊天：问问题、拟消息、头脑风暴。它会记住你的偏好，不必每次重讲。',
+    feat2_title:'今日仪表板', feat2_desc:'股价、天气、体育赛事和新闻放在同一页。置顶你关心的卡片，或直接让 AI 帮你加一张。',
+    feat3_title:'好友与 AI 秘书', feat3_desc:'通过 Nostr 和好友点对点发消息。开启 AI 秘书模式，Xitto 会帮你拟好回复，重要消息不漏接。',
+    feat4_title:'生活追踪', feat4_desc:'拍照分析饮食营养、习惯打卡、理财规划、购物清单、旅游足迹。',
+    feat5_title:'定时任务', feat5_desc:'设置定期任务，Xitto 会在对的时间自动执行，在后台也能运行。',
+    feat6_title:'隐私优先', feat6_desc:'对话保留在你的设备上。未经你的许可，Xitto 不会上传个人数据。',
+    sp1_label:'今日仪表板',
+    sp1_h2:'重要的事，<br><span class="grad-text">一眼看完</span>',
+    sp1_desc:'打开 Xitto，今天的天气、持股、昨晚的比赛和你关注的新闻都已经排好了。',
+    sp1_li1:'股市、体育、天气、新闻卡片', sp1_li2:'用说的加卡片：“帮我加一张台积电卡片”', sp1_li3:'按你的关注完全自定义',
+    sp2_label:'生活小应用',
+    sp2_h2:'小工具，<br><span class="grad-text">大帮手</span>',
+    sp2_desc:'内置在 Xitto 里的轻量应用，在最需要的地方用上 AI。',
+    sp2_li1:'理财规划、习惯打卡、购物清单、倒数日', sp2_li2:'饮食记录：拍照，AI 分析热量与营养', sp2_li3:'旅游足迹：照片＋定位＋AI 旅行笔记',
+    dl_badge:'免费下载', dl_h2:'立即开始使用 Xitto',
+    dl_sub:'iPhone 版现已推出（需 iOS 16.4 以上）。', dl_btn_ios_sub:'iPhone · 免费',
+    about_label:'关于 Xiza',
+    about_h2:'打造真正<br><span class="grad-text">好用的 AI 工具</span>',
+    about_p1:'Xiza 是 2025 年在台湾成立的初创公司。我们开发 Xitto：一个融入日常生活、而不是增加负担的 AI 助理。',
+    about_p2:'如有问题或合作需求，欢迎来信或通过 Line 官方账号联系我们。',
+    about_line:'加入 Line 官方账号',
+    founder_title:'创始人 / 技术长',
+    founder_bio:'清华大学计算机工程，10+ 年横跨金融、零售、制造、半导体、新能源汽车等行业的 Java 企业架构与 AI 系统集成经验。',
+    co_title:'公司信息', co_name:'公司名称', co_taxid:'统一编号', co_founded:'成立', co_founded_v:'2025 年 6 月 30 日 · 台北市', co_addr:'地址', co_email:'邮箱', co_rep:'代表人',
+    faq_h2:'常见问题',
+    faq_q1:'Xitto 免费吗？', faq_a1:'免费。Xitto 可免费下载，登录 Xitto 云端即享免费 AI 额度，也可以接入自己的 API Key。',
+    faq_q2:'我的数据安全吗？', faq_a2:'对话和记忆都存在你的设备上。未经许可，Xitto 不会上传个人数据，记忆也可以随时查看或清除。',
+    faq_q3:'支持哪些 AI 模型？', faq_a3:'Xitto 云端开箱即用，无需设置。也可以接入自己的 OpenAI、Gemini、DeepSeek、MiniMax 或其他兼容服务的 API Key。',
+    faq_q4:'有 Android 版吗？', faq_a4:'目前先推出 iPhone 版，Android 版已在规划中。加入 Line 官方账号，上线时第一时间通知你。',
+    footer_tagline:'打造真正好用的 AI 工具', footer_privacy:'隐私政策', footer_terms:'服务条款', footer_taxid:'统一编号'
+  }
+};
+
+function detectLang() {
+  let stored = null;
+  try { stored = localStorage.getItem('xiza-lang'); } catch (e) {}
+  if (stored && T[stored]) return stored;
+  const nav = (navigator.language || '').toLowerCase();
+  if (nav === 'zh-tw' || nav === 'zh-hant' || nav.startsWith('zh-hant')) return 'zh-TW';
+  if (nav.startsWith('zh')) return 'zh-CN';
+  return 'en';
+}
+
+function applyLang(lang) {
+  const d = T[lang] || T.en;
+  document.documentElement.lang = lang === 'zh-CN' ? 'zh-Hans' : lang === 'zh-TW' ? 'zh-Hant' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (d[key] !== undefined) el.textContent = d[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (d[key] !== undefined) el.innerHTML = d[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  try { localStorage.setItem('xiza-lang', lang); } catch (e) {}
+}
+
+const currentLang = detectLang();
+applyLang(currentLang);
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+</script>
+
+<script>
+/* ---- Nav scroll ---- */
+(function() {
+  const nav = document.getElementById('navHeader');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+})();
+
+/* ---- Mobile burger ---- */
+(function() {
+  const burger = document.getElementById('navBurger');
+  const links  = document.getElementById('navLinks');
+  burger.addEventListener('click', () => { links.classList.toggle('open'); burger.classList.toggle('open'); });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); burger.classList.remove('open'); }));
+})();
+
+/* ---- FAQ accordion ---- */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

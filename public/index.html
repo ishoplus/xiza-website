@@ -1,460 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xitto — Your AI Assistant for Everyday Life | Xiza</title>
-    <meta name="description" content="Xitto is a mobile AI assistant for everyday life by Xiza, a Taiwan-based startup. Chat, a Today dashboard, friends with an AI secretary, life-tracking mini-apps and scheduled tasks.">
-    <link rel="icon" href="img/app-icon.jpg">
-    <link rel="stylesheet" href="style.css?v=4">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Xiza",
-      "legalName": "Xiza Co., Ltd.",
-      "alternateName": "係咱股份有限公司",
-      "url": "https://www.xi-za.com",
-      "logo": "https://www.xi-za.com/img/app-icon.jpg",
-      "email": "support@xi-za.com",
-      "foundingDate": "2025-06-30",
-      "taxID": "60645037",
-      "address": { "@type": "PostalAddress", "streetAddress": "8F., No. 106, Sec. 1, Zhonghua Rd., Wanhua Dist., Taipei City 108, Taiwan", "addressCountry": "TW" },
-      "founder": { "@type": "Person", "name": "Sho Wang" }
-    }
-    </script>
-</head>
-<body>
+<!doctype html>
+<html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三貓日和｜Xiza</title>
+<!-- 畫面上不放文案、不放解釋；給搜尋引擎、AI 搜尋、連結預覽的字只放在這裡 -->
+<meta name="description" content="三貓日和：照著我家三隻貓（妹妹、達達、摸摸）做的手機養貓遊戲，免費、用手機瀏覽器就能玩。由 Xiza 一個人和 AI 一起開發。">
+<meta property="og:title" content="三貓日和｜Xiza">
+<meta property="og:description" content="照著我家三隻貓做的手機養貓遊戲，免費、手機瀏覽器就能玩。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.xi-za.com/">
+<link rel="canonical" href="https://www.xi-za.com/">
+<link rel="icon" href="/img/app-icon.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://www.xi-za.com/v/20261026/og.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","name":"係咱股份有限公司 Xiza","url":"https://www.xi-za.com","email":"support@xi-za.com","taxID":"60645037"},
+ {"@type":"VideoGame","name":"三貓日和","url":"https://cats.xi-za.com","gamePlatform":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"TWD"},"description":"照著真實的三隻貓（三花妹妹、銀白英短達達、銀虎斑摸摸）做的手機養貓遊戲。"},
+ {"@type":"SoftwareSourceCode","name":"Cubbi","codeRepository":"https://github.com/ishoplus/cubbi","license":"https://opensource.org/licenses/MIT"}
+]}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--wall:#f6efe4;--ink:#3a2e27;--soft:#8a7a6e;--navy:#141b33}
+body{font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--wall);-webkit-font-smoothing:antialiased}
+a{color:inherit}
 
-<!-- ========== NAV ========== -->
-<header class="nav-header" id="navHeader">
-    <nav class="nav-inner">
-        <a class="nav-logo" href="#">Xiza</a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#features" data-i18n="nav_feat">Features</a></li>
-            <li><a href="#download" data-i18n="nav_dl">Download</a></li>
-            <li><a href="#about" data-i18n="nav_about">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
-        <div class="lang-switcher" id="langSwitcher">
-            <button data-lang="en" class="lang-btn active">EN</button>
-            <button data-lang="zh-TW" class="lang-btn">繁</button>
-            <button data-lang="zh-CN" class="lang-btn">简</button>
-        </div>
-        <a href="#download" class="nav-cta" data-i18n="nav_cta">Get Xitto</a>
-        <button class="nav-burger" id="navBurger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
-</header>
+/* 首屏＝牠們的房間：牆上掛本人的照片，地板上是遊戲裡的牠們 */
+.room{position:relative;height:94vh;min-height:620px;overflow:hidden;user-select:none;-webkit-user-select:none}
+.wall{position:absolute;inset:0 0 34% 0;background:repeating-linear-gradient(90deg,#f6efe4 0 46px,#f2e9dc 46px 48px)}
+.floor{position:absolute;inset:66% 0 0 0;background:linear-gradient(#e7cfae,#d9bb93);box-shadow:inset 0 6px 0 #c9a77d}
+.floor::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 158px,#c9a77d55 158px 160px)}
 
-<!-- ========== HERO ========== -->
-<section class="hero" id="hero">
-    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
-    <div class="container hero-container">
-        <div class="hero-text">
-            <span class="hero-badge" data-i18n="hero_badge">Now on the App Store · Free</span>
-            <h1 class="hero-h1" data-i18n-html="hero_h1">Your AI Assistant<br>for <span class="grad-text">Everyday Life</span></h1>
-            <p class="hero-desc" data-i18n="hero_desc">Xitto brings chat, a personal Today dashboard, friends with an AI secretary, life-tracking mini-apps and scheduled tasks together in one app on your phone.</p>
-            <div class="hero-btns">
-                <a href="https://apps.apple.com/tw/app/xitto/id6776693640" target="_blank" rel="noopener" class="btn-primary">
-                    <i class="fab fa-apple"></i>
-                    <span data-i18n="dl_btn_ios">Download on the App Store</span>
-                </a>
-                <a href="#features" class="btn-ghost">
-                    <span data-i18n="hero_btn_explore">Explore Features</span> <i class="fas fa-arrow-down"></i>
-                </a>
-            </div>
-        </div>
-        <div class="hero-phones" aria-hidden="true">
-            <div class="phone-frame phone-back"><img src="img/shot-chat.jpg" alt=""></div>
-            <div class="phone-frame phone-front"><img src="img/shot-today.jpg" alt=""></div>
-        </div>
-    </div>
+.logo{position:absolute;top:22px;left:5vw;z-index:5}
+.logo img{width:32px;height:32px;border-radius:9px;display:block}
+
+.sign{position:absolute;left:50%;top:9%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:20px;z-index:3}
+.sign .name{display:flex;align-items:center;gap:14px}
+.sign .name img{width:60px;height:60px;border-radius:50%}
+.sign .name b{white-space:nowrap;font-family:"Songti TC","Noto Serif TC",serif;font-size:clamp(34px,4.4vw,52px);font-weight:900;letter-spacing:.08em}
+.btn{display:inline-block;padding:17px 42px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:18px;text-decoration:none;box-shadow:0 10px 24px #3a2e2733;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+
+/* 進遊戲：跟遊戲同一套手繪肉球圖示（icons.js 的 paw），不放字；每隔幾秒輕輕按一下 */
+.go{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:#fff;box-shadow:0 12px 28px #5a3a2230,0 0 0 6px #ffffff88;transition:transform .2s;animation:press 3.2s ease-in-out infinite}
+.go svg{width:56px;height:56px}
+.go:hover{transform:scale(1.06);animation:none}
+@keyframes press{0%,78%,100%{transform:scale(1)}84%{transform:scale(.9)}90%{transform:scale(1.04)}}
+/* 牆上的照片 */
+.frame{position:absolute;background:#fff;padding:8px;box-shadow:0 10px 24px #5a3a2226;border-radius:3px}
+.frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.frame::before{content:"";position:absolute;left:50%;top:-16px;width:2px;height:16px;background:#b79c80}
+.f1{left:7%;top:13%;width:150px;transform:rotate(-4deg)}
+.f2{right:8%;top:10%;width:160px;transform:rotate(3deg)}
+.f3{right:21%;top:30%;width:120px;transform:rotate(-2deg)}
+
+/* 地板上的貓 */
+.cat{position:absolute;left:0;bottom:0;transform-origin:50% 100%;cursor:pointer;will-change:transform}
+.cat img{display:block;pointer-events:none;filter:drop-shadow(0 4px 3px #5a3a2230)}
+.cat .shadow{position:absolute;left:18%;right:18%;bottom:-6px;height:12px;border-radius:50%;background:#5a3a2222;z-index:-1}
+.heart{position:absolute;width:22px;height:22px;pointer-events:none;animation:up 1.4s ease-out forwards;z-index:6}
+@keyframes up{from{opacity:1;transform:translate(-50%,0) scale(.6)}to{opacity:0;transform:translate(-50%,-70px) scale(1.1)}}
+
+/* 第二屏：辦公室（Cubbi），整屏、畫面要大 */
+.office{min-height:100vh;background:#0e1428;color:#dfe3f3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:60px 4vw}
+.office .screen{height:min(76vh,1100px);aspect-ratio:1080/1250;max-width:92vw;border-radius:26px;overflow:hidden;box-shadow:0 30px 90px #000c}
+.office video{width:100%;height:100%;object-fit:cover;display:block}
+.office .dev{display:flex;align-items:center;gap:14px}
+.office .gh{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;color:#0e1428;transition:transform .2s}
+.office .gh:hover{transform:scale(1.07)}
+.office .gh svg{width:36px;height:36px}
+.office code{font-family:ui-monospace,Menlo,monospace;font-size:17px;background:#ffffff14;padding:12px 18px;border-radius:10px;user-select:all}
+.office small{font-size:12px;opacity:.4}
+/* 往下滑的提示：不寫字，底部一個會上下晃的箭頭，點了捲到第二屏 */
+.down{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:#ffffffcc;display:grid;place-items:center;box-shadow:0 8px 20px #5a3a2226;z-index:30;animation:bob 1.8s ease-in-out infinite;cursor:pointer;border:0}
+.down svg{width:26px;height:26px}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+footer{padding:40px 5vw;font-size:13px;color:var(--soft);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between}
+footer nav{display:flex;gap:20px}
+
+@media(max-width:760px){
+  .f1{left:5%;top:30%;width:96px}.f2{right:5%;top:27%;width:100px}.f3{display:none}
+  .sign{top:8%}
+}
+</style></head><body>
+
+<section class="room" id="room">
+  <div class="wall"></div><div class="floor"></div>
+  <a class="logo" href="/"><img src="/img/app-icon.jpg" alt="Xiza"></a>
+  <div class="frame f1"><img src="/v/20261026/meimei.jpg" alt="妹妹本人"></div>
+  <div class="frame f2"><img src="/v/20261026/dada.jpg" alt="達達本人"></div>
+  <div class="frame f3"><img src="/v/20261026/momo.jpg" alt="摸摸本人"></div>
+  <div class="sign">
+    <div class="name"><img src="/v/20261026/cats-icon.png" alt=""><b>三貓日和</b></div>
+    <a class="go" href="https://cats.xi-za.com/?ref=xiza" aria-label="去陪牠們玩"><svg viewBox="0 0 64 64" fill="none" stroke="#6b4a3a" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="42" rx="12" ry="10" fill="#f6b6c8"/><ellipse cx="17" cy="28" rx="5" ry="6.5" fill="#f6b6c8"/><ellipse cx="26" cy="19" rx="5" ry="6.5" fill="#f6b6c8"/><ellipse cx="38" cy="19" rx="5" ry="6.5" fill="#f6b6c8"/><ellipse cx="47" cy="28" rx="5" ry="6.5" fill="#f6b6c8"/></svg></a>
+  </div>
+<button class="down" aria-label="往下看" onclick="document.getElementById('office').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="#6b4a3a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
 </section>
 
-<!-- ========== FEATURES ========== -->
-<section class="features-section" id="features">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-i18n-html="feat_h2">One App for <span class="grad-text">Your Whole Day</span></h2>
-            <p class="section-sub" data-i18n="feat_sub">From a quick question to planning a trip, Xitto handles the details so you can focus on living.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feat-card">
-                <div class="feat-icon" style="--c:#58a9ff"><i class="fas fa-comments"></i></div>
-                <h3 data-i18n="feat1_title">Chat</h3>
-                <p data-i18n="feat1_desc">Talk to Xitto with the AI model you prefer. Get answers, draft messages and brainstorm, with personal memory so you never repeat yourself.</p>
-            </div>
-            <div class="feat-card">
-                <div class="feat-icon" style="--c:#ffa657"><i class="fas fa-sun"></i></div>
-                <h3 data-i18n="feat2_title">Today Dashboard</h3>
-                <p data-i18n="feat2_desc">Stocks, weather, sports and news on one page. Pin the cards you care about, or just ask the AI to add one for you.</p>
-            </div>
-            <div class="feat-card">
-                <div class="feat-icon" style="--c:#d2a8ff"><i class="fas fa-user-group"></i></div>
-                <h3 data-i18n="feat3_title">Friends &amp; AI Secretary</h3>
-                <p data-i18n="feat3_desc">Message friends peer-to-peer over Nostr. Turn on AI secretary mode and Xitto suggests replies so nothing important slips by.</p>
-            </div>
-            <div class="feat-card">
-                <div class="feat-icon" style="--c:#7ee787"><i class="fas fa-heart-pulse"></i></div>
-                <h3 data-i18n="feat4_title">Life Tracking</h3>
-                <p data-i18n="feat4_desc">Snap a meal for nutrition analysis, track habits, plan your budget, keep a shopping list and log your travels.</p>
-            </div>
-            <div class="feat-card">
-                <div class="feat-icon" style="--c:#ff7b72"><i class="fas fa-clock"></i></div>
-                <h3 data-i18n="feat5_title">Scheduled Tasks</h3>
-                <p data-i18n="feat5_desc">Set recurring tasks and Xitto runs them at the right time, even in the background.</p>
-            </div>
-            <div class="feat-card">
-                <div class="feat-icon" style="--c:#79c0ff"><i class="fas fa-shield-halved"></i></div>
-                <h3 data-i18n="feat6_title">Privacy First</h3>
-                <p data-i18n="feat6_desc">Conversations stay on your device. Xitto never uploads your personal data without your permission.</p>
-            </div>
-        </div>
-    </div>
+<section class="office" id="office">
+  <div class="screen"><video src="/v/20261026/office-grow.mp4" poster="/v/20261026/office-grow.jpg" autoplay muted loop playsinline aria-label="Cubbi：Claude Code 的每個對話是一個積木員工，辦公室跟著長大"></video></div>
+  <div class="dev">
+    <a class="gh" href="https://github.com/ishoplus/cubbi" aria-label="Cubbi 的 GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <code>npx cubbi</code>
+  </div>
+  <small>Unofficial · not affiliated with Anthropic</small>
 </section>
 
-<!-- ========== SPOTLIGHT 1 ========== -->
-<section class="spotlight-section" id="spotlight1">
-    <div class="container spotlight-inner">
-        <div class="spotlight-text">
-            <span class="spotlight-label" data-i18n="sp1_label">Today Dashboard</span>
-            <h2 data-i18n-html="sp1_h2">Everything That Matters,<br><span class="grad-text">At a Glance</span></h2>
-            <p data-i18n="sp1_desc">Open Xitto and your day is already laid out: the weather, your stocks, last night's match and the news you follow.</p>
-            <ul class="spotlight-list">
-                <li><i class="fas fa-check"></i><span data-i18n="sp1_li1">Cards for stocks, sports, weather and news</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="sp1_li2">Add a card by asking: "Add a TSMC card for me"</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="sp1_li3">Fully customizable to what you care about</span></li>
-            </ul>
-        </div>
-        <div class="spotlight-visual">
-            <div class="phone-frame phone-solo"><img src="img/shot-today.jpg" alt="Xitto Today dashboard"></div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== SPOTLIGHT 2 ========== -->
-<section class="spotlight-section spotlight-reverse" id="spotlight2">
-    <div class="container spotlight-inner">
-        <div class="spotlight-text">
-            <span class="spotlight-label" data-i18n="sp2_label">Mini-Apps</span>
-            <h2 data-i18n-html="sp2_h2">Small Tools,<br><span class="grad-text">Big Help</span></h2>
-            <p data-i18n="sp2_desc">Lightweight apps built into Xitto, each with AI where it helps most.</p>
-            <ul class="spotlight-list">
-                <li><i class="fas fa-check"></i><span data-i18n="sp2_li1">Budget planning, habit check-ins, shopping lists, countdowns</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="sp2_li2">Food log: snap a photo, AI estimates calories and nutrition</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="sp2_li3">Travel journal: photos + location + AI-written notes</span></li>
-            </ul>
-        </div>
-        <div class="spotlight-visual">
-            <div class="phone-frame phone-solo"><img src="img/shot-apps.jpg" alt="Xitto mini-apps"></div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== DOWNLOAD ========== -->
-<section class="download-section" id="download">
-    <div class="dl-orb" aria-hidden="true"></div>
-    <div class="container dl-container">
-        <img class="dl-icon" src="img/app-icon.jpg" alt="Xitto app icon">
-        <span class="dl-badge" data-i18n="dl_badge">Free Download</span>
-        <h2 class="dl-title" data-i18n="dl_h2">Start Using Xitto Today</h2>
-        <p class="dl-sub" data-i18n="dl_sub">Available now for iPhone (iOS 16.4 or later).</p>
-        <div class="dl-btns">
-            <a href="https://apps.apple.com/tw/app/xitto/id6776693640" target="_blank" rel="noopener" class="btn-primary btn-lg">
-                <i class="fab fa-apple"></i>
-                <div>
-                    <span class="btn-main-text" data-i18n="dl_btn_ios">Download on the App Store</span>
-                    <span class="btn-sub-text" data-i18n="dl_btn_ios_sub">iPhone · Free</span>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ========== ABOUT ========== -->
-<section class="about-section" id="about">
-    <div class="container about-inner">
-        <div class="about-text">
-            <span class="about-label" data-i18n="about_label">About Xiza</span>
-            <h2 data-i18n-html="about_h2">Building Truly<br><span class="grad-text">Useful AI Tools</span></h2>
-            <p data-i18n="about_p1">Xiza is a startup founded in Taiwan in 2025. We build Xitto, an AI assistant that fits into everyday life instead of adding to your cognitive load.</p>
-            <p data-i18n="about_p2">Have questions or partnership inquiries? Email us or reach out through our Line official account.</p>
-            <div class="about-contact">
-                <a href="mailto:support@xi-za.com" class="about-mail-btn"><i class="fas fa-envelope"></i> support@xi-za.com</a>
-                <a href="https://line.me/ti/p/@868fegki" target="_blank" rel="noopener" class="about-line-btn">
-                    <i class="fab fa-line"></i> <span data-i18n="about_line">Join Our Line Account</span>
-                </a>
-            </div>
-        </div>
-        <div class="about-founder">
-            <div class="founder-card">
-                <div class="founder-avatar">SW</div>
-                <div class="founder-info">
-                    <h4>Sho Wang <span class="founder-name-zh">王佑祥</span></h4>
-                    <p class="founder-title" data-i18n="founder_title">Founder / CTO</p>
-                    <p class="founder-bio" data-i18n="founder_bio">NTHU Computer Science. 10+ years of Java enterprise architecture and AI system integration across finance, retail, manufacturing, semiconductor, and new energy vehicle industries.</p>
-                </div>
-            </div>
-            <div class="company-card">
-                <h4 data-i18n="co_title">Company Information</h4>
-                <dl class="company-info">
-                    <dt data-i18n="co_name">Legal name</dt>
-                    <dd>係咱股份有限公司<br><span class="co-sub">Xiza Co., Ltd.</span></dd>
-                    <dt data-i18n="co_taxid">Business ID</dt>
-                    <dd><a href="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do?banNo=60645037" target="_blank" rel="noopener">60645037</a></dd>
-                    <dt data-i18n="co_rep">Representative</dt>
-                    <dd>王佑祥 (Yu-Hsiang Wang)</dd>
-                    <dt data-i18n="co_founded">Founded</dt>
-                    <dd data-i18n="co_founded_v">June 30, 2025 · Taipei, Taiwan</dd>
-                    <dt data-i18n="co_addr">Address</dt>
-                    <dd>108 臺北市萬華區中華路一段 106 號 8 樓<br><span class="co-sub">8F., No. 106, Sec. 1, Zhonghua Rd., Wanhua Dist., Taipei City 108, Taiwan</span></dd>
-                    <dt data-i18n="co_email">Email</dt>
-                    <dd><a href="mailto:support@xi-za.com">support@xi-za.com</a></dd>
-                </dl>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== FAQ ========== -->
-<section class="faq-section" id="faq">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-i18n="faq_h2">FAQ</h2>
-        </div>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-q"><span data-i18n="faq_q1">Is Xitto free?</span><i class="fas fa-plus faq-icon"></i></button>
-                <div class="faq-a" data-i18n="faq_a1">Yes. Xitto is free to download, and signing in to Xitto Cloud gives you a free AI usage allowance. You can also connect your own API key.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q"><span data-i18n="faq_q2">Is my data secure?</span><i class="fas fa-plus faq-icon"></i></button>
-                <div class="faq-a" data-i18n="faq_a2">Conversations and memory are stored on your device. Xitto does not upload personal data without your permission, and you can view or clear your memory at any time.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q"><span data-i18n="faq_q3">Which AI models are supported?</span><i class="fas fa-plus faq-icon"></i></button>
-                <div class="faq-a" data-i18n="faq_a3">Xitto Cloud works out of the box with no setup. You can also bring your own API key from OpenAI, Gemini, DeepSeek, MiniMax or any compatible provider.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q"><span data-i18n="faq_q4">Is there an Android version?</span><i class="fas fa-plus faq-icon"></i></button>
-                <div class="faq-a" data-i18n="faq_a4">Xitto is available on iPhone today. Android is on our roadmap. Join our Line account to hear when it launches.</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <div class="footer-brand">
-            <span class="footer-logo">Xiza</span>
-            <p data-i18n="footer_tagline">Building truly useful AI tools</p>
-        </div>
-        <div class="footer-links">
-            <a href="#features" data-i18n="nav_feat">Features</a>
-            <a href="#download" data-i18n="nav_dl">Download</a>
-            <a href="#about" data-i18n="nav_about">About</a>
-            <a href="#faq">FAQ</a>
-            <a href="https://shiptw.xi-za.com/?ref=xiza" target="_blank" rel="noopener">ShipTW</a>
-            <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
-            <a href="terms.html" data-i18n="footer_terms">Terms</a>
-            <a href="https://line.me/ti/p/@868fegki" target="_blank" rel="noopener"><i class="fab fa-line"></i></a>
-        </div>
-    </div>
-    <div class="footer-copy">
-        <p>© 2025–2026 Xiza Co., Ltd. (係咱股份有限公司) · <span data-i18n="footer_taxid">Business ID</span> 60645037</p>
-    </div>
+<footer>
+  <div>© 2026 係咱股份有限公司 Xiza · 統編 60645037 · support@xi-za.com</div>
+  <nav><a href="/xitto.html">Xitto App</a><a href="/privacy.html">隱私權政策</a><a href="/terms.html">服務條款</a></nav>
 </footer>
 
-<!-- ========== SCRIPTS ========== -->
 <script>
-/* ---- i18n ---- */
-const T = {
-  en: {
-    nav_feat:'Features', nav_dl:'Download', nav_about:'About', nav_cta:'Get Xitto',
-    hero_badge:'Now on the App Store · Free',
-    hero_h1:'Your AI Assistant<br>for <span class="grad-text">Everyday Life</span>',
-    hero_desc:'Xitto brings chat, a personal Today dashboard, friends with an AI secretary, life-tracking mini-apps and scheduled tasks together in one app on your phone.',
-    dl_btn_ios:'Download on the App Store', hero_btn_explore:'Explore Features',
-    feat_h2:'One App for <span class="grad-text">Your Whole Day</span>',
-    feat_sub:'From a quick question to planning a trip, Xitto handles the details so you can focus on living.',
-    feat1_title:'Chat', feat1_desc:'Talk to Xitto with the AI model you prefer. Get answers, draft messages and brainstorm, with personal memory so you never repeat yourself.',
-    feat2_title:'Today Dashboard', feat2_desc:'Stocks, weather, sports and news on one page. Pin the cards you care about, or just ask the AI to add one for you.',
-    feat3_title:'Friends & AI Secretary', feat3_desc:'Message friends peer-to-peer over Nostr. Turn on AI secretary mode and Xitto suggests replies so nothing important slips by.',
-    feat4_title:'Life Tracking', feat4_desc:'Snap a meal for nutrition analysis, track habits, plan your budget, keep a shopping list and log your travels.',
-    feat5_title:'Scheduled Tasks', feat5_desc:'Set recurring tasks and Xitto runs them at the right time, even in the background.',
-    feat6_title:'Privacy First', feat6_desc:'Conversations stay on your device. Xitto never uploads your personal data without your permission.',
-    sp1_label:'Today Dashboard',
-    sp1_h2:'Everything That Matters,<br><span class="grad-text">At a Glance</span>',
-    sp1_desc:'Open Xitto and your day is already laid out: the weather, your stocks, last night\'s match and the news you follow.',
-    sp1_li1:'Cards for stocks, sports, weather and news', sp1_li2:'Add a card by asking: "Add a TSMC card for me"', sp1_li3:'Fully customizable to what you care about',
-    sp2_label:'Mini-Apps',
-    sp2_h2:'Small Tools,<br><span class="grad-text">Big Help</span>',
-    sp2_desc:'Lightweight apps built into Xitto, each with AI where it helps most.',
-    sp2_li1:'Budget planning, habit check-ins, shopping lists, countdowns', sp2_li2:'Food log: snap a photo, AI estimates calories and nutrition', sp2_li3:'Travel journal: photos + location + AI-written notes',
-    dl_badge:'Free Download', dl_h2:'Start Using Xitto Today',
-    dl_sub:'Available now for iPhone (iOS 16.4 or later).', dl_btn_ios_sub:'iPhone · Free',
-    about_label:'About Xiza',
-    about_h2:'Building Truly<br><span class="grad-text">Useful AI Tools</span>',
-    about_p1:'Xiza is a startup founded in Taiwan in 2025. We build Xitto, an AI assistant that fits into everyday life instead of adding to your cognitive load.',
-    about_p2:'Have questions or partnership inquiries? Email us or reach out through our Line official account.',
-    about_line:'Join Our Line Account',
-    founder_title:'Founder / CTO',
-    founder_bio:'NTHU Computer Science. 10+ years of Java enterprise architecture and AI system integration across finance, retail, manufacturing, semiconductor, and new energy vehicle industries.',
-    co_title:'Company Information', co_name:'Legal name', co_taxid:'Business ID', co_founded:'Founded', co_founded_v:'June 30, 2025 · Taipei, Taiwan', co_addr:'Address', co_email:'Email', co_rep:'Representative',
-    faq_h2:'FAQ',
-    faq_q1:'Is Xitto free?', faq_a1:'Yes. Xitto is free to download, and signing in to Xitto Cloud gives you a free AI usage allowance. You can also connect your own API key.',
-    faq_q2:'Is my data secure?', faq_a2:'Conversations and memory are stored on your device. Xitto does not upload personal data without your permission, and you can view or clear your memory at any time.',
-    faq_q3:'Which AI models are supported?', faq_a3:'Xitto Cloud works out of the box with no setup. You can also bring your own API key from OpenAI, Gemini, DeepSeek, MiniMax or any compatible provider.',
-    faq_q4:'Is there an Android version?', faq_a4:'Xitto is available on iPhone today. Android is on our roadmap. Join our Line account to hear when it launches.',
-    footer_tagline:'Building truly useful AI tools', footer_privacy:'Privacy', footer_terms:'Terms', footer_taxid:'Business ID'
-  },
-  'zh-TW': {
-    nav_feat:'功能', nav_dl:'下載', nav_about:'關於', nav_cta:'取得 Xitto',
-    hero_badge:'App Store 已上架 · 免費',
-    hero_h1:'陪你過日子的<br><span class="grad-text">AI 助理</span>',
-    hero_desc:'Xitto 把對話、個人化今日資訊、好友與 AI 秘書、生活小工具和定時任務整合在同一個手機 App 裡。',
-    dl_btn_ios:'在 App Store 下載', hero_btn_explore:'探索功能',
-    feat_h2:'一個 App，<span class="grad-text">打理你的一天</span>',
-    feat_sub:'從隨口一問到規劃旅程，細節交給 Xitto，你專心生活。',
-    feat1_title:'對話', feat1_desc:'用你喜歡的 AI 模型和 Xitto 聊天：問問題、擬訊息、腦力激盪。它會記住你的偏好，不必每次重講。',
-    feat2_title:'今日儀表板', feat2_desc:'股價、天氣、體育賽事和新聞放在同一頁。釘選你關心的卡片，或直接請 AI 幫你加一張。',
-    feat3_title:'好友與 AI 秘書', feat3_desc:'透過 Nostr 和好友點對點傳訊。開啟 AI 秘書模式，Xitto 會幫你擬好回覆，重要訊息不漏接。',
-    feat4_title:'生活追蹤', feat4_desc:'拍照分析飲食營養、習慣打卡、理財規劃、購物清單、旅遊足跡。',
-    feat5_title:'定時任務', feat5_desc:'設定定期任務，Xitto 會在對的時間自動執行，在背景也能運作。',
-    feat6_title:'隱私優先', feat6_desc:'對話保留在你的裝置上。未經你的許可，Xitto 不會上傳個人資料。',
-    sp1_label:'今日儀表板',
-    sp1_h2:'重要的事，<br><span class="grad-text">一眼看完</span>',
-    sp1_desc:'打開 Xitto，今天的天氣、持股、昨晚的比賽和你追的新聞都已經排好了。',
-    sp1_li1:'股市、運動、天氣、新聞卡片', sp1_li2:'用說的加卡片：「幫我加一張台積電卡片」', sp1_li3:'依你的關注完全自訂',
-    sp2_label:'生活小應用',
-    sp2_h2:'小工具，<br><span class="grad-text">大幫手</span>',
-    sp2_desc:'內建在 Xitto 裡的輕量應用，在最需要的地方用上 AI。',
-    sp2_li1:'理財規劃、習慣打卡、購物清單、倒數日', sp2_li2:'飲食記錄：拍照，AI 分析熱量與營養', sp2_li3:'旅遊足跡：照片＋定位＋AI 旅行筆記',
-    dl_badge:'免費下載', dl_h2:'立即開始使用 Xitto',
-    dl_sub:'iPhone 版現已推出（需 iOS 16.4 以上）。', dl_btn_ios_sub:'iPhone · 免費',
-    about_label:'關於 Xiza',
-    about_h2:'打造真正<br><span class="grad-text">好用的 AI 工具</span>',
-    about_p1:'Xiza 是 2025 年在台灣成立的新創公司。我們開發 Xitto：一個融入日常生活、而不是增加負擔的 AI 助理。',
-    about_p2:'如有問題或合作需求，歡迎來信或透過 Line 官方帳號聯繫我們。',
-    about_line:'加入 Line 官方帳號',
-    founder_title:'創辦人 / 技術長',
-    founder_bio:'清華大學資訊工程，10+ 年橫跨金融、零售、製造、半導體、新能源汽車等產業的 Java 企業架構與 AI 系統整合經驗。',
-    co_title:'公司資訊', co_name:'公司名稱', co_taxid:'統一編號', co_founded:'成立', co_founded_v:'2025 年 6 月 30 日 · 臺北市', co_addr:'地址', co_email:'信箱', co_rep:'代表人',
-    faq_h2:'常見問題',
-    faq_q1:'Xitto 免費嗎？', faq_a1:'免費。Xitto 可免費下載，登入 Xitto 雲端即享免費 AI 額度，也可以接自己的 API Key。',
-    faq_q2:'我的資料安全嗎？', faq_a2:'對話和記憶都存在你的裝置上。未經許可，Xitto 不會上傳個人資料，記憶也可以隨時查看或清除。',
-    faq_q3:'支援哪些 AI 模型？', faq_a3:'Xitto 雲端開箱即用，不用設定。也可以接自己的 OpenAI、Gemini、DeepSeek、MiniMax 或其他相容服務的 API Key。',
-    faq_q4:'有 Android 版嗎？', faq_a4:'目前先推出 iPhone 版，Android 版已在規劃中。加入 Line 官方帳號，上線時第一時間通知你。',
-    footer_tagline:'打造真正好用的 AI 工具', footer_privacy:'隱私政策', footer_terms:'服務條款', footer_taxid:'統一編號'
-  },
-  'zh-CN': {
-    nav_feat:'功能', nav_dl:'下载', nav_about:'关于', nav_cta:'获取 Xitto',
-    hero_badge:'App Store 已上架 · 免费',
-    hero_h1:'陪你过日子的<br><span class="grad-text">AI 助理</span>',
-    hero_desc:'Xitto 把对话、个性化今日信息、好友与 AI 秘书、生活小工具和定时任务整合在同一个手机 App 里。',
-    dl_btn_ios:'在 App Store 下载', hero_btn_explore:'探索功能',
-    feat_h2:'一个 App，<span class="grad-text">打理你的一天</span>',
-    feat_sub:'从随口一问到规划旅程，细节交给 Xitto，你专心生活。',
-    feat1_title:'对话', feat1_desc:'用你喜欢的 AI 模型和 Xitto 聊天：问问题、拟消息、头脑风暴。它会记住你的偏好，不必每次重讲。',
-    feat2_title:'今日仪表板', feat2_desc:'股价、天气、体育赛事和新闻放在同一页。置顶你关心的卡片，或直接让 AI 帮你加一张。',
-    feat3_title:'好友与 AI 秘书', feat3_desc:'通过 Nostr 和好友点对点发消息。开启 AI 秘书模式，Xitto 会帮你拟好回复，重要消息不漏接。',
-    feat4_title:'生活追踪', feat4_desc:'拍照分析饮食营养、习惯打卡、理财规划、购物清单、旅游足迹。',
-    feat5_title:'定时任务', feat5_desc:'设置定期任务，Xitto 会在对的时间自动执行，在后台也能运行。',
-    feat6_title:'隐私优先', feat6_desc:'对话保留在你的设备上。未经你的许可，Xitto 不会上传个人数据。',
-    sp1_label:'今日仪表板',
-    sp1_h2:'重要的事，<br><span class="grad-text">一眼看完</span>',
-    sp1_desc:'打开 Xitto，今天的天气、持股、昨晚的比赛和你关注的新闻都已经排好了。',
-    sp1_li1:'股市、体育、天气、新闻卡片', sp1_li2:'用说的加卡片：“帮我加一张台积电卡片”', sp1_li3:'按你的关注完全自定义',
-    sp2_label:'生活小应用',
-    sp2_h2:'小工具，<br><span class="grad-text">大帮手</span>',
-    sp2_desc:'内置在 Xitto 里的轻量应用，在最需要的地方用上 AI。',
-    sp2_li1:'理财规划、习惯打卡、购物清单、倒数日', sp2_li2:'饮食记录：拍照，AI 分析热量与营养', sp2_li3:'旅游足迹：照片＋定位＋AI 旅行笔记',
-    dl_badge:'免费下载', dl_h2:'立即开始使用 Xitto',
-    dl_sub:'iPhone 版现已推出（需 iOS 16.4 以上）。', dl_btn_ios_sub:'iPhone · 免费',
-    about_label:'关于 Xiza',
-    about_h2:'打造真正<br><span class="grad-text">好用的 AI 工具</span>',
-    about_p1:'Xiza 是 2025 年在台湾成立的初创公司。我们开发 Xitto：一个融入日常生活、而不是增加负担的 AI 助理。',
-    about_p2:'如有问题或合作需求，欢迎来信或通过 Line 官方账号联系我们。',
-    about_line:'加入 Line 官方账号',
-    founder_title:'创始人 / 技术长',
-    founder_bio:'清华大学计算机工程，10+ 年横跨金融、零售、制造、半导体、新能源汽车等行业的 Java 企业架构与 AI 系统集成经验。',
-    co_title:'公司信息', co_name:'公司名称', co_taxid:'统一编号', co_founded:'成立', co_founded_v:'2025 年 6 月 30 日 · 台北市', co_addr:'地址', co_email:'邮箱', co_rep:'代表人',
-    faq_h2:'常见问题',
-    faq_q1:'Xitto 免费吗？', faq_a1:'免费。Xitto 可免费下载，登录 Xitto 云端即享免费 AI 额度，也可以接入自己的 API Key。',
-    faq_q2:'我的数据安全吗？', faq_a2:'对话和记忆都存在你的设备上。未经许可，Xitto 不会上传个人数据，记忆也可以随时查看或清除。',
-    faq_q3:'支持哪些 AI 模型？', faq_a3:'Xitto 云端开箱即用，无需设置。也可以接入自己的 OpenAI、Gemini、DeepSeek、MiniMax 或其他兼容服务的 API Key。',
-    faq_q4:'有 Android 版吗？', faq_a4:'目前先推出 iPhone 版，Android 版已在规划中。加入 Line 官方账号，上线时第一时间通知你。',
-    footer_tagline:'打造真正好用的 AI 工具', footer_privacy:'隐私政策', footer_terms:'服务条款', footer_taxid:'统一编号'
+// 三隻貓在地板上自己走、坐、躺、舔毛；點一下會翻肚子或踩奶，還會呼嚕
+// 圖跟遊戲同一套（每組第 1 格是同比例站姿），所以同一隻貓所有動作用同一個縮放就不會忽大忽小
+const ROOM=document.getElementById('room'), BASE='/v/20261026/cats/';
+const SEQ={walk:['walk0','walk1','walk2','walk3'],sitDown:['sitA','sitB','sit2','sit3'],lieDown:['lie1','lie2','lie3'],
+  groom:['groom','lick0','lick1','lick0'],knead:['knead0','knead1','knead2','knead1'],belly:['belly']};
+const CATS=[{id:'calico',h:414,x:.22,depth:.55},{id:'white',h:427,x:.5,depth:.8},{id:'tabby',h:428,x:.78,depth:.35}];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const frames={};
+for(const c of CATS)for(const s of Object.values(SEQ))for(const f of s){const k=c.id+'/'+f;if(!frames[k]){const im=new Image();im.src=BASE+k+'.webp';frames[k]=im}}
+
+const W=()=>ROOM.clientWidth, H=()=>ROOM.clientHeight;
+const size=()=>Math.max(96,Math.min(190,W()*.13));            // 站姿高度（px）
+const rand=(a,b)=>a+Math.random()*(b-a);
+
+for(const c of CATS){
+  c.el=document.createElement('div');c.el.className='cat';
+  c.img=document.createElement('img');c.img.alt='';c.el.append(c.img);
+  const sh=document.createElement('div');sh.className='shadow';c.el.append(sh);
+  ROOM.append(c.el);
+  c.px=c.x*W();c.dir=Math.random()<.5?1:-1;c.state='idle';c.t=0;c.f=0;c.hold=rand(.5,2);
+  c.purr=new Audio(BASE+'purr-'+c.id+'.m4a');c.purr.loop=true;
+  c.el.addEventListener('pointerdown',e=>{e.preventDefault();pet(c)});
+}
+function show(c,name){
+  const im=frames[c.id+'/'+name]; if(!im.complete||!im.naturalHeight)return;
+  const k=size()/c.h*(.78+.32*c.depth);                         // 越靠前（depth 大）越大
+  if(c.img.src!==im.src)c.img.src=im.src;
+  c.img.style.height=im.naturalHeight*k+'px';
+}
+function place(c){
+  const y=H()*.34*(1-c.depth)*.82;                               // 地板上的前後位置
+  c.el.style.transform=`translate(${c.px}px,${-y-8}px) translateX(-50%) scaleX(${c.dir})`;
+  c.el.style.zIndex=10+Math.round(c.depth*10);
+}
+function next(c){                                                // 選下一件事
+  const r=Math.random();
+  if(r<.5){c.state='walk';const m=size()*.9;c.goal=Math.max(m,Math.min(W()-m,c.px+rand(-1,1)*W()*.4));c.dir=c.goal>c.px?1:-1}
+  else if(r<.72){c.state='sitDown';c.hold=rand(3,6)}
+  else if(r<.88){c.state='groom';c.hold=rand(2.5,4.5)}
+  else {c.state='lieDown';c.hold=rand(5,9)}
+  c.t=0;c.f=0;
+}
+function pet(c){
+  c.state=Math.random()<.5?'belly':'knead';c.t=0;c.f=0;c.hold=3.2;
+  c.purr.currentTime=0;c.purr.volume=.7;c.purr.play().catch(()=>{});
+  heart(c);
+}
+function heart(c){
+  const r=c.el.getBoundingClientRect(),R=ROOM.getBoundingClientRect();
+  const h=document.createElement('div');h.className='heart';
+  h.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.5 3.3 5 6.8 5c2 0 3.5 1.1 5.2 3 1.7-1.9 3.2-3 5.2-3 3.5 0 5.8 3.5 4.4 6.8C19.5 16.4 12 21 12 21z" fill="#e8798a"/></svg>';
+  h.style.left=(r.left+r.width/2-R.left)+'px';h.style.top=(r.top-R.top+10)+'px';ROOM.append(h);setTimeout(()=>h.remove(),1500);
+}
+let last=performance.now();
+function tick(now){
+  const dt=Math.min(.05,(now-last)/1000);last=now;
+  for(const c of CATS){
+    c.t+=dt;const s=SEQ[c.state]||SEQ.sitDown;
+    if(c.state==='idle'){show(c,'walk0');if(c.t>c.hold&&!reduce)next(c)}
+    else if(c.state==='walk'){
+      const sp=size()*.55*(.8+.3*c.depth);
+      c.px+=c.dir*sp*dt;show(c,s[Math.floor(c.t*7)%4]);
+      if((c.dir>0&&c.px>=c.goal)||(c.dir<0&&c.px<=c.goal)){c.state='idle';c.t=0;c.hold=rand(.6,1.6)}
+    }
+    else if(c.state==='sitDown'||c.state==='lieDown'){
+      // 一格一格坐下／躺下 → 停住 → 倒著播站起來，不用閃的
+      const n=s.length,d=n/6,up=c.t-d-c.hold;
+      const i=up<0?Math.min(n-1,Math.floor(c.t*6)):n-1-Math.floor(up*6);
+      if(i<0){c.state='idle';c.t=0;c.hold=rand(.4,1.2)}else show(c,s[i]);
+    }
+    else { show(c,s[Math.floor(c.t*5)%s.length]);
+      if(c.t>c.hold){ if(c.purr&&!c.purr.paused){fade(c.purr)} c.state='idle';c.t=0;c.hold=rand(1,2.5)} }
+    place(c);
   }
-};
-
-function detectLang() {
-  let stored = null;
-  try { stored = localStorage.getItem('xiza-lang'); } catch (e) {}
-  if (stored && T[stored]) return stored;
-  const nav = (navigator.language || '').toLowerCase();
-  if (nav === 'zh-tw' || nav === 'zh-hant' || nav.startsWith('zh-hant')) return 'zh-TW';
-  if (nav.startsWith('zh')) return 'zh-CN';
-  return 'en';
+  requestAnimationFrame(tick);
 }
-
-function applyLang(lang) {
-  const d = T[lang] || T.en;
-  document.documentElement.lang = lang === 'zh-CN' ? 'zh-Hans' : lang === 'zh-TW' ? 'zh-Hant' : 'en';
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (d[key] !== undefined) el.textContent = d[key];
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.dataset.i18nHtml;
-    if (d[key] !== undefined) el.innerHTML = d[key];
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-  try { localStorage.setItem('xiza-lang', lang); } catch (e) {}
-}
-
-const currentLang = detectLang();
-applyLang(currentLang);
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-});
+function fade(a){let v=a.volume;const t=setInterval(()=>{v-=.07;if(v<=0){a.pause();clearInterval(t)}else a.volume=v},60)}
+requestAnimationFrame(tick);
 </script>
-
-<script>
-/* ---- Nav scroll ---- */
-(function() {
-  const nav = document.getElementById('navHeader');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
-})();
-
-/* ---- Mobile burger ---- */
-(function() {
-  const burger = document.getElementById('navBurger');
-  const links  = document.getElementById('navLinks');
-  burger.addEventListener('click', () => { links.classList.toggle('open'); burger.classList.toggle('open'); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); burger.classList.remove('open'); }));
-})();
-
-/* ---- FAQ accordion ---- */
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-</script>
-</body>
-</html>
+</body></html>

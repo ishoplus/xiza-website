@@ -1,0 +1,20 @@
+# Xiza（係咱股份有限公司）
+
+> 台灣的一人公司，創辦人和 AI 一起做產品。目前公開的有兩個：手機養貓遊戲「三貓日和」與開源專案「Cubbi」。
+
+## 三貓日和
+- 網址：https://cats.xi-za.com
+- 照著創辦人家裡三隻真的貓做的手機養貓遊戲：三花「妹妹」、銀白英短「達達」、銀虎斑白襪「摸摸」。
+- 免費，用手機瀏覽器就能玩，不用下載 App。遊戲裡的呼嚕聲是真貓錄的。
+- 沒有懲罰：貓不會餓死、生病或離家出走。
+
+## Cubbi
+- 原始碼：https://github.com/ishoplus/cubbi（MIT 授權）
+- 安裝：`npx cubbi`
+- 把 Claude Code 的每個對話變成積木辦公室裡的一個員工，對話越多辦公室越大。只讀本機紀錄。
+- 非官方專案，與 Anthropic 無關（Unofficial · not affiliated with Anthropic）。
+
+## 公司
+- 係咱股份有限公司（Xiza），統一編號 60645037，2025 年成立於臺北市。
+- 聯絡：support@xi-za.com
+- Xitto 手機 App 介紹：https://www.xi-za.com/xitto.html
